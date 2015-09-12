@@ -13,25 +13,24 @@
     <!-- MedzmateApp references -->
     <link href="css/index.css" rel="stylesheet" />
 </head>
-<body>
-    <p>Medzmate is ready!</p>
-    
+<body>    
     <div class="login-07">
 		<div class="seventh-login">
-			<h3>LOGIN FORM</h3>
+            <h1>Welcome to Medzmate!</h1>
+            <h2>Please login to access the device</h2>
 			<form class="seven">
 				<ul>
 					<li>
-						<input type="text"   placeholder="EMAIL ADDRESS" required/>
+						<input type="text" id="userName"  placeholder="EMAIL ADDRESS" required/>
 						<a href="#" class="icon8 star"> </a>
 						<div class="clear"> </div>
 					</li> 
 					<li>
-						<input type="password"   placeholder="PASSWORD" required/>
+						<input type="password" id="password" placeholder="PASSWORD" required/>
 						<a href="#" class="icon8 star"> </a>
 						<div class="clear"> </div>
-					</li>
-					<input type="submit" onclick="myFunction()" value="LOG IN" > 
+                        <input type="button" id="btnLogin" value="LOG IN"> 
+					</li>					
 			</form>
 		</div>
 	</div>
