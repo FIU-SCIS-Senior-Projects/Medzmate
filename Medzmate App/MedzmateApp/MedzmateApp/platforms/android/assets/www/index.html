@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <title>MedzmateApp</title>
+
+    <!-- MedzmateApp references -->
+    <link href="css/index.css" rel="stylesheet" />
+</head>
+<body>
+    <p>Medzmate is ready!</p>
+    
+    <div class="login-07">
+		<div class="seventh-login">
+			<h3>LOGIN FORM</h3>
+			<form class="seven">
+				<ul>
+					<li>
+						<input type="text"   placeholder="EMAIL ADDRESS" required/>
+						<a href="#" class="icon8 star"> </a>
+						<div class="clear"> </div>
+					</li> 
+					<li>
+						<input type="password"   placeholder="PASSWORD" required/>
+						<a href="#" class="icon8 star"> </a>
+						<div class="clear"> </div>
+					</li>
+					<input type="submit" onclick="myFunction()" value="LOG IN" > 
+			</form>
+		</div>
+	</div>
+
+    <!-- Cordova reference, this is added to your app when it's built. -->
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+
+    <script src="scripts/index.js"></script>
+</body>
+</html>
