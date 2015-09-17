@@ -6,3 +6,31 @@
 	margin:8px 0 16px;
 	text-align:center;
 }
+
+#form_container
+{
+	background:#fff;
+	
+	margin:0 auto;
+	text-align:left;
+	width:640px;
+}
+
+#top
+{
+	display:block;
+	height:10px;
+	margin:10px auto 0;
+	width:650px;
+}
+
+#footer
+{
+	width:640px;
+	clear:both;
+	color:#999999;
+	text-align:center;
+	width:640px;
+	padding-bottom: 15px;
+	font-size: 85%;
+}
