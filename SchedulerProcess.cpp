@@ -1,11 +1,20 @@
 #include "stdafx.h"
 #include "SchedulerProcess.h"
+#include <ctime>
 
 
 bool SchedulerProcess::IsTime(DispenserConfiguration dc)
 {
+	tm _tm;
+	int i;
 	_sleep(1000);
-	return true;
+	_getsystime(&_tm);
+	for (i = 0; i < 24; i++)
+	{
+		if (dc.DispensingTimes[i].tm_hour == _tm.tm_hour)
+			return true;
+	}
+	return false;
 }
 
 SchedulerProcess::SchedulerProcess(MedzmateConfiguration configuration)

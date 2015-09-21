@@ -11,7 +11,7 @@ MedzmateConfiguration::MedzmateConfiguration(char* serialNumber, DispenserConfig
 	int i;
 	for (i = 0; i < DISPCONFIGS; i++)
 	{
-		DispenserConfigurations[i] = DispenserConfiguration(configurations[i].MedicineName);
+		DispenserConfigurations[i] = DispenserConfiguration(configurations[i]);
 	}
 }
 

@@ -9,11 +9,11 @@ public:
 	char DoctorsName [32];
 	char DoctorsLastName[32];
 	int Quantity;
-	time_t ExpirationDate;
+	tm ExpirationDate;
 	double MedicineMass;
 	int DossageFrequency;
 	bool FrequencyInHours; // Hours or Minutes
-	time_t StartTime [24];
+	tm DispensingTimes [24];
 	int Containers [8];
 	char Symptoms[512];
 	char SideEffects[512];
