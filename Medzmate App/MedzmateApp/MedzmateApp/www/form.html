@@ -11,15 +11,20 @@
         <!-- MedzmateApp references -->
         <link href="css/formStyle.css" rel="stylesheet" />
         <script type="text/javascript" src="scripts/loadingDeckSelector.js"></script>
-        <link rel="stylesheet" type="text/css" href="view.css" media="all">
-        <script type="text/javascript" src="view.js"></script>
-        <script type="text/javascript" src="calendar.js"></script>
+        <script type="text/javascript" src="scripts/calendar.js"></script>
+        <script type="text/javascript" src="scripts/formProcesor.js"></script>
+
+        <!-- Jquerry ui references TODO get the files local-->
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+  
 </head>
+<body id="main_body">
 <img id="top" src="images/top.png" alt="">
 <div id="form_container">
-
-    <h1><a>Medicine Information</a></h1>
-    <form id="form_1050292" class="appnitro" method="post" action="">
+    <form id="form_1050292" class="medicineDetails" method="post" action="">
         <div class="form_description">
             <h2>Medicine Information</h2>
             <p>Please enter the medicine information being loaded</p>
@@ -27,135 +32,129 @@
         <ul>
 
             <li id="li_1">
-                <label class="description" for="element_1">Medicine Name </label>
+                <label class="description" for="Medicine_Name">Medicine Name </label>
                 <div>
-                    <input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value="" />
-                </div><p class="guidelines" id="guide_1"><small>Please enter the name of the pills </small></p>
+                    <input id="Medicine_Name" name="Medicine_Name" class="element text medium" type="text" maxlength="255" required value="" />
+                </div>
             </li>
             <li id="li_2">
-                <label class="description" for="element_2">Doctor's Name </label>
+                <label class="description" for="Doctors_Name">Doctor's Name </label>
                 <span>
-                    <input id="element_2_1" name="element_2_1" class="element text" maxlength="255" size="8" value="" />
-                    <label>First</label>
+                    <input id="Doctors_Name_1" name="Doctors_Name_1" class="element text" maxlength="255" size="8"  placeholder ="First" />
                 </span>
                 <span>
-                    <input id="element_2_2" name="element_2_2" class="element text" maxlength="255" size="14" value="" />
-                    <label>Last</label>
-                </span><p class="guidelines" id="guide_2"><small>Enter name of the doctor prescribing the medicine</small></p>
+                    <input id="Doctors_Name_2" name="Doctors_Name_2" class="element text" maxlength="255" size="14" placeholder ="Last" />
+                </span>
             </li>
             <li id="li_3">
-                <label class="description" for="element_3">Quantity </label>
+                <label class="description" for="Quantity">Quantity </label>
                 <div>
-                    <input id="element_3" name="element_3" class="element text small" type="text" maxlength="255" value="" />
-                </div><p class="guidelines" id="guide_3"><small>How many pilss per notification?</small></p>
+                    <input id="Quantity" name="Quantity" type="number" data-clear-btn="false" required value="" />
+                </div>
             </li>
             <li id="li_9">
-                <label class="description" for="element_9">Mass </label>
+                <label class="description" for="Mass">Mass </label>
                 <div>
-                    <input id="element_9" name="element_9" class="element text small" type="text" maxlength="255" value="" />
+                    <input id="Mass" name="Mass" type="number" data-clear-btn="false" required value="" />
                 </div>
             </li>
             <li id="li_4">
-                <label class="description" for="element_4">Expiration Date </label>
-                <span>
-                    <input id="element_4_1" name="element_4_1" class="element text" size="2" maxlength="2" value="" type="text"> /
-                    <label for="element_4_1">MM</label>
-                </span>
-                <span>
-                    <input id="element_4_2" name="element_4_2" class="element text" size="2" maxlength="2" value="" type="text"> /
-                    <label for="element_4_2">DD</label>
-                </span>
-                <span>
-                    <input id="element_4_3" name="element_4_3" class="element text" size="4" maxlength="4" value="" type="text">
-                    <label for="element_4_3">YYYY</label>
-                </span>
+                <div >
+                    <label for="Expiration_date">Expiration Date:</label>
+                    <input type="date" name="Expiration_date" id="Expiration_date" value="" />
+                </div>
 
-                <span id="calendar_4">
-                    <img id="cal_img_4" class="datepicker" src="images/calendar.gif" alt="Pick a date.">
-                </span>
-                <script type="text/javascript">
-			Calendar.setup({
-			inputField	 : "element_4_3",
-			baseField    : "element_4",
-			displayArea  : "calendar_4",
-			button		 : "cal_img_4",
-			ifFormat	 : "%B %e, %Y",
-			onSelect	 : selectDate
-			});
-                </script>
-                <p class="guidelines" id="guide_4"><small>When does this medicine expire?</small></p>
             </li>
             <li id="li_7">
-                <label class="description" for="element_7">No. of Doses (per day) </label>
+                <label class="description" for="nDoses">No. of Doses (per day) </label>
                 <div>
-                    <select class="element select small" id="element_7" name="element_7">
-                        <option value="1" selected="selected">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">6</option>
-                        <option value="6">8</option>
-                        <option value="7">12</option>
-                        <option value="8">24</option>
+                    <select class="element select small" id="nDoses" name="nDoses" data-native-menu="false"  >
+                        <option value="1" selected>1 per day ( 1 every 24 hrs)</option>
+                        <option value="2">2 per day ( 1 every 12 hrs)</option>
+                        <option value="3">3 per day ( 1 every  8 hrs)</option>
+                        <option value="4">4 per day ( 1 every  6 hrs)</option>
+                        <option value="5">6 per day ( 1 every  4 hrs)</option>
+                        <option value="6">8 per day ( 1 every  3 hrs)</option>
+                        <option value="7">12 per day ( 1 every  2 hrs)</option>
+                        <option value="8">24 per day ( 1 every hour)</option>
                     </select>
-                </div><p class="guidelines" id="guide_7"><small>Select how many times per day Ex 6 will notify the patient every 4hrs</small></p>
+                </div>
             </li>
             <li id="li_10">
-                <label class="description" for="element_10">Frequency </label>
-                <span>
-                    <input id="element_10_1" name="element_10_1" class="element checkbox" type="checkbox" value="1" />
-                    <label class="choice" for="element_10_1">Mo</label>
-                    <input id="element_10_2" name="element_10_2" class="element checkbox" type="checkbox" value="1" />
-                    <label class="choice" for="element_10_2">Tu</label>
-                    <input id="element_10_3" name="element_10_3" class="element checkbox" type="checkbox" value="1" />
-                    <label class="choice" for="element_10_3">Wh</label>
-                    <input id="element_10_4" name="element_10_4" class="element checkbox" type="checkbox" value="1" />
-                    <label class="choice" for="element_10_4">Th</label>
-                    <input id="element_10_5" name="element_10_5" class="element checkbox" type="checkbox" value="1" />
-                    <label class="choice" for="element_10_5">Fr</label>
-                    <input id="element_10_6" name="element_10_6" class="element checkbox" type="checkbox" value="1" />
-                    <label class="choice" for="element_10_6">St</label>
-                    <input id="element_10_7" name="element_10_7" class="element checkbox" type="checkbox" value="1" />
-                    <label class="choice" for="element_10_7">Su</label>
-                    <input id="element_10_8" name="element_10_8" class="element checkbox" type="checkbox" value="1" />
-                    <label class="choice" for="element_10_8">Daily</label>
-                </span><p class="guidelines" id="guide_10"><small>Check the days of the week the patient should be take the medicine Ex M T will notify the patient only Mondays and Tuesdays as many times as defined on the No. of Doses field.</small></p>
-            </li>
+                <label class="description" for="frequency">Frequency </label>
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="false">
+                        <input type="checkbox" id="Monday" name="Monday" class="ui-helper-hidden-accessible">
+                        <label for="Monday" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left" role="button"><span class="ui-button-text">Mo</span></label>
+                        <input type="checkbox" id="Tuesday" class="ui-helper-hidden-accessible">
+                        <label for="Tuesday" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button"><span class="ui-button-text">Tu</span></label>
+                        <input type="checkbox" id="Whednesday" class="ui-helper-hidden-accessible">
+                        <label for="Whednesday" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" role="button"><span class="ui-button-text">Wh</span></label>
+                        <input type="checkbox" id="Thursday" class="ui-helper-hidden-accessible">
+                        <label for="Thursday" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left" role="button"><span class="ui-button-text">Th</span></label>
+                    </fieldset>  
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="false">
+                        <input type="checkbox" id="Friday" class="ui-helper-hidden-accessible">
+                        <label for="Friday" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button"><span class="ui-button-text">Fr</span></label>
+                        <input type="checkbox" id="Saturday" class="ui-helper-hidden-accessible">
+                        <label for="Saturday" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" role="button"><span class="ui-button-text">St</span></label>
+                        <input type="checkbox" id="Sunday" class="ui-helper-hidden-accessible">
+                        <label for="Sunday" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button"><span class="ui-button-text">Su</span></label>
+                        <input type="checkbox" id="Daily" class="ui-helper-hidden-accessible" checked="checked">
+                        <label for="Daily" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" role="button"><span class="ui-button-text">Daily</span></label>
+                    </fieldset >                 
+                </li>
             <li id="li_8">
                 <label class="description" for="element_8">Link with other container </label>
-                <span>
-                    <input id="element_8_1" name="element_8_1" class="element checkbox" type="checkbox" value="1" />
-                    <label class="choice" for="element_8_1">A</label>
-                    <input id="element_8_2" name="element_8_2" class="element checkbox" type="checkbox" value="1" />
-                    <label class="choice" for="element_8_2">B</label>
-                    <input id="element_8_3" name="element_8_3" class="element checkbox" type="checkbox" value="1" />
-                    <label class="choice" for="element_8_3">C</label>
-                    <input id="element_8_2" name="element_8_2" class="element checkbox" type="checkbox" value="1" />
-                    <label class="choice" for="element_8_2">D</label>
-                    <input id="element_8_3" name="element_8_3" class="element checkbox" type="checkbox" value="1" />
-                    <label class="choice" for="element_8_3">E</label>
-                </span><p class="guidelines" id="guide_8"><small>Linked to another straw</small></p>
+                <div data-role="collapsible">
+                    <h3>Link with other container</h3>
+                    <p>
+                        <input id="element_8_1" name="element_8_1" type="checkbox" value="1" />
+                        <label for="element_8_1">A</label>
+                        <input id="element_8_2" name="element_8_2" type="checkbox" value="1" />
+                        <label for="element_8_2">B</label>
+                        <input id="element_8_3" name="element_8_3" type="checkbox" value="1" />
+                        <label for="element_8_3">C</label>
+                        <input id="element_8_4" name="element_8_4" type="checkbox" value="1" />
+                        <label for="element_8_4">D</label>
+                        <input id="element_8_5" name="element_8_5" type="checkbox" value="1" />
+                        <label for="element_8_5">E</label> 
+                     </p>
+                </div>
+                                  
             </li>
             <li id="li_5">
                 <label class="description" for="element_5">Symtoms </label>
                 <div>
-                    <textarea id="element_5" name="element_5" class="element textarea medium"></textarea>
-                </div><p class="guidelines" id="guide_5"><small>What are the main symptoms?</small></p>
+                    <textarea id="element_5" name="element_5" placeholder ="What are the main symptoms?" class="element textarea medium"></textarea>
+                </div>
             </li>
             <li id="li_6">
                 <label class="description" for="element_6">Side Effects </label>
                 <div>
-                    <textarea id="element_6" name="element_6" class="element textarea medium"></textarea>
-                </div><p class="guidelines" id="guide_6"><small>What are the major side effects?</small></p>
-            </li>
-
+                    <textarea id="element_6" name="element_6" placeholder ="What are the major side effects?" class="element textarea medium"></textarea>
+                </div>
+            </li>            
             <li class="buttons">
                 <input type="hidden" name="form_id" value="1050292" />
-
-                <input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
+                <a href="#popupDialog" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-transition="pop" data-icon="delete">Cancel</a> 
+                <input id="saveForm" class="button_text" type="submit" data-inline="true" name="submit" data-theme="b" Check - data-icon="check" value="Submit" onclick="proccessForm()"/>
             </li>
+            
         </ul>
+        <div data-role="popup" id="popupDialog" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
+            <div data-role="header" data-theme="a" class="ui-corner-top">
+                <h1>Delete Page?</h1>
+            </div>
+            <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
+                <h3 class="ui-title">Are you sure you want leave this page?</h3>
+                <p>Any un-saved data will be lost.</p>
+                <p>This action cannot be undone.</p>
+                <a href="#" data-role="button" data-inline="true" data-rel="back" data-icon="delete" data-theme="a">Stay in the form</a>
+                <input id="cancelForm" class="button_text" type="button" data-inline="true" name="cancel" data-theme="b" data-icon="check" value="Take me out" data-rel="dialog" onclick="navigateToLoadingDeck()" />
+            </div>
+        </div>
     </form>
+    
 </div>
 <img id="bottom" src="images/bottom.png" alt="">
 	</body>
