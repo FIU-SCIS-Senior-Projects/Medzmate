@@ -39,15 +39,23 @@ void SchedulerProcess::Run()
 void ActionHandler::Handler(DispenserConfiguration dc)
 {
 	char input[256];
-	printf("Dipensing %s ... \n", dc.MedicineName);
+	printf("Ready to dispense %s ... \n", dc.MedicineName);
+}
+
+void ActionHandler::LightBlinks(DispenserConfiguration dc)
+{
+	char input[256];
+	printf("Light Blinks ... \n");
 }
 
 void ActionHandler::hookEvent(SchedulerProcess * source)
 {
 	__hook(&SchedulerProcess::Signal, source, &ActionHandler::Handler);
+	__hook(&SchedulerProcess::Signal, source, &ActionHandler::LightBlinks);
 }
 
 void ActionHandler::unhookEvent(SchedulerProcess * source)
 {
 	__unhook(&SchedulerProcess::Signal, source, &ActionHandler::Handler);
+	__unhook(&SchedulerProcess::Signal, source, &ActionHandler::LightBlinks);
 }

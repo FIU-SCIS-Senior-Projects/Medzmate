@@ -17,6 +17,7 @@ class ActionHandler
 {
 public:
 	void Handler(DispenserConfiguration dc);
+	void LightBlinks(DispenserConfiguration dc);
 	void hookEvent(SchedulerProcess* source);
 	void unhookEvent(SchedulerProcess* source);
 };
