@@ -32,62 +32,43 @@
         <ul>
 
             <li id="li_1">
-                <label class="description" for="element_1">Medicine Name </label>
+                <label class="description" for="Medicine_Name">Medicine Name </label>
                 <div>
-                    <input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" required value="" />
+                    <input id="Medicine_Name" name="Medicine_Name" class="element text medium" type="text" maxlength="255" required value="" />
                 </div>
             </li>
             <li id="li_2">
-                <label class="description" for="element_2">Doctor's Name </label>
+                <label class="description" for="Doctors_Name">Doctor's Name </label>
                 <span>
-                    <input id="element_2_1" name="element_2_1" class="element text" maxlength="255" size="8"  placeholder ="First" />
+                    <input id="Doctors_Name_1" name="Doctors_Name_1" class="element text" maxlength="255" size="8"  placeholder ="First" />
                 </span>
                 <span>
-                    <input id="element_2_2" name="element_2_2" class="element text" maxlength="255" size="14" placeholder ="Last" />
+                    <input id="Doctors_Name_2" name="Doctors_Name_2" class="element text" maxlength="255" size="14" placeholder ="Last" />
                 </span>
             </li>
             <li id="li_3">
-                <label class="description" for="element_3">Quantity </label>
+                <label class="description" for="Quantity">Quantity </label>
                 <div>
-                    <input id="element_3" name="element_3" type="number" data-clear-btn="false" required value="" />
+                    <input id="Quantity" name="Quantity" type="number" data-clear-btn="false" required value="" />
                 </div>
             </li>
             <li id="li_9">
-                <label class="description" for="element_9">Mass </label>
+                <label class="description" for="Mass">Mass </label>
                 <div>
-                    <input id="element_9" name="element_9" data-clear-btn="false" required value="" />
+                    <input id="Mass" name="Mass" type="number" data-clear-btn="false" required value="" />
                 </div>
             </li>
             <li id="li_4">
-                <label class="description" for="element_4">Expiration Date </label>
-                <span>
-                    <input id="element_4_1" name="element_4_1" class="element text" size="2" maxlength="2" placeholder="MM" type="text" > 
-                </span>
-                <span>
-                    <input id="element_4_2" name="element_4_2" class="element text" size="2" maxlength="2" placeholder="DD" value="" type="text">
-                </span>
-                <span>
-                    <input id="element_4_3" name="element_4_3" class="element text" size="4" maxlength="4" placeholder="YYYY" value="" type="text">
-                </span>
+                <div >
+                    <label for="Expiration_date">Expiration Date:</label>
+                    <input type="date" name="Expiration_date" id="Expiration_date" value="" />
+                </div>
 
-                <span id="calendar_4">
-                    <img id="cal_img_4" class="datepicker" src="images/calendar.gif" alt="Pick a date.">
-                </span>
-                <script type="text/javascript">
-			Calendar.setup({
-			inputField	 : "element_4_3",
-			baseField    : "element_4",
-			displayArea  : "calendar_4",
-			button		 : "cal_img_4",
-			ifFormat	 : "%B %e, %Y",
-			onSelect	 : selectDate
-			});
-                </script>
             </li>
             <li id="li_7">
-                <label class="description" for="element_7">No. of Doses (per day) </label>
+                <label class="description" for="nDoses">No. of Doses (per day) </label>
                 <div>
-                    <select class="element select small" id="element_7" name="element_7" data-native-menu="false"  >
+                    <select class="element select small" id="nDoses" name="nDoses" data-native-menu="false"  >
                         <option value="1" selected>1 per day ( 1 every 24 hrs)</option>
                         <option value="2">2 per day ( 1 every 12 hrs)</option>
                         <option value="3">3 per day ( 1 every  8 hrs)</option>
@@ -100,26 +81,26 @@
                 </div>
             </li>
             <li id="li_10">
-                <label class="description" for="element_10">Frequency </label>
+                <label class="description" for="frequency">Frequency </label>
                 <fieldset data-role="controlgroup" data-type="horizontal" data-mini="false">
-                        <input type="checkbox" id="check1" class="ui-helper-hidden-accessible">
-                        <label for="check1" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left" role="button"><span class="ui-button-text">Mo</span></label>
-                        <input type="checkbox" id="check2" class="ui-helper-hidden-accessible">
-                        <label for="check2" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button"><span class="ui-button-text">Tu</span></label>
-                        <input type="checkbox" id="check3" class="ui-helper-hidden-accessible">
-                        <label for="check3" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" role="button"><span class="ui-button-text">Wh</span></label>
-                        <input type="checkbox" id="check4" class="ui-helper-hidden-accessible">
-                        <label for="check4" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left" role="button"><span class="ui-button-text">Th</span></label>
+                        <input type="checkbox" id="Monday" name="Monday" class="ui-helper-hidden-accessible">
+                        <label for="Monday" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left" role="button"><span class="ui-button-text">Mo</span></label>
+                        <input type="checkbox" id="Tuesday" class="ui-helper-hidden-accessible">
+                        <label for="Tuesday" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button"><span class="ui-button-text">Tu</span></label>
+                        <input type="checkbox" id="Whednesday" class="ui-helper-hidden-accessible">
+                        <label for="Whednesday" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" role="button"><span class="ui-button-text">Wh</span></label>
+                        <input type="checkbox" id="Thursday" class="ui-helper-hidden-accessible">
+                        <label for="Thursday" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left" role="button"><span class="ui-button-text">Th</span></label>
                     </fieldset>  
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="false">
-                        <input type="checkbox" id="check5" class="ui-helper-hidden-accessible">
-                        <label for="check5" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button"><span class="ui-button-text">Fr</span></label>
-                        <input type="checkbox" id="check6" class="ui-helper-hidden-accessible">
-                        <label for="check6" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" role="button"><span class="ui-button-text">St</span></label>
-                        <input type="checkbox" id="check7" class="ui-helper-hidden-accessible">
-                        <label for="check7" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button"><span class="ui-button-text">Su</span></label>
-                        <input type="checkbox" id="check8" class="ui-helper-hidden-accessible" checked>
-                        <label for="check8" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" role="button"><span class="ui-button-text">Daily</span></label>
+                        <input type="checkbox" id="Friday" class="ui-helper-hidden-accessible">
+                        <label for="Friday" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button"><span class="ui-button-text">Fr</span></label>
+                        <input type="checkbox" id="Saturday" class="ui-helper-hidden-accessible">
+                        <label for="Saturday" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" role="button"><span class="ui-button-text">St</span></label>
+                        <input type="checkbox" id="Sunday" class="ui-helper-hidden-accessible">
+                        <label for="Sunday" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button"><span class="ui-button-text">Su</span></label>
+                        <input type="checkbox" id="Daily" class="ui-helper-hidden-accessible" checked="checked">
+                        <label for="Daily" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" role="button"><span class="ui-button-text">Daily</span></label>
                     </fieldset >                 
                 </li>
             <li id="li_8">
@@ -144,34 +125,34 @@
             <li id="li_5">
                 <label class="description" for="element_5">Symtoms </label>
                 <div>
-                    <textarea id="element_5" name="element_5" class="element textarea medium"></textarea>
-                </div><p class="guidelines" id="guide_5"><small>What are the main symptoms?</small></p>
+                    <textarea id="element_5" name="element_5" placeholder ="What are the main symptoms?" class="element textarea medium"></textarea>
+                </div>
             </li>
             <li id="li_6">
                 <label class="description" for="element_6">Side Effects </label>
                 <div>
-                    <textarea id="element_6" name="element_6" class="element textarea medium"></textarea>
-                </div><p class="guidelines" id="guide_6"><small>What are the major side effects?</small></p>
+                    <textarea id="element_6" name="element_6" placeholder ="What are the major side effects?" class="element textarea medium"></textarea>
+                </div>
             </li>            
             <li class="buttons">
                 <input type="hidden" name="form_id" value="1050292" />
                 <a href="#popupDialog" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-transition="pop" data-icon="delete">Cancel</a> 
-                <input id="saveForm" class="button_text" type="submit" data-inline="true" name="submit" data-theme="b" Check - data-icon="check" value="Submit" />
+                <input id="saveForm" class="button_text" type="submit" data-inline="true" name="submit" data-theme="b" Check - data-icon="check" value="Submit" onclick="proccessForm()"/>
             </li>
             
-            <div data-role="popup" id="popupDialog" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
-                <div data-role="header" data-theme="a" class="ui-corner-top">
-                    <h1>Delete Page?</h1>
-                </div>
-                <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
-                    <h3 class="ui-title">Are you sure you want leave this page?</h3>
-                    <p>Any un-saved data will be lost.</p>
-                    <p>This action cannot be undone.</p>
-                    <a href="#" data-role="button" data-inline="true" data-rel="back" data-icon="delete" data-theme="a">Stay in the form</a>
-                    <input id="cancelForm" class="button_text" type="button" data-inline="true" name="cancel" data-theme="b" data-icon="check" value="Take me out" data-rel="dialog" onclick="navigateToLoadingDeck()" />
-                </div>
-            </div>
         </ul>
+        <div data-role="popup" id="popupDialog" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
+            <div data-role="header" data-theme="a" class="ui-corner-top">
+                <h1>Delete Page?</h1>
+            </div>
+            <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
+                <h3 class="ui-title">Are you sure you want leave this page?</h3>
+                <p>Any un-saved data will be lost.</p>
+                <p>This action cannot be undone.</p>
+                <a href="#" data-role="button" data-inline="true" data-rel="back" data-icon="delete" data-theme="a">Stay in the form</a>
+                <input id="cancelForm" class="button_text" type="button" data-inline="true" name="cancel" data-theme="b" data-icon="check" value="Take me out" data-rel="dialog" onclick="navigateToLoadingDeck()" />
+            </div>
+        </div>
     </form>
     
 </div>
