@@ -14,19 +14,22 @@ int main()
 
 	tm _tm;
 	_getsystime(&_tm);
-	Console::WriteLine(_tm.tm_hour);
-	Console::WriteLine(_tm.tm_min);
+	_tm.tm_hour = _tm.tm_hour;
+	// display time
+	printf("Time: %d:%d \n", _tm.tm_hour, _tm.tm_min);
 
 	DispenserConfiguration med1 = DispenserConfiguration("Medicine 1");
 	DispenserConfiguration med2 = DispenserConfiguration("Medicine 2");
 	med2.DispensingTimes[0] = _tm;
+	med2.DispensingTimes[0].tm_hour += 1;
 	DispenserConfiguration med3 = DispenserConfiguration("Medicine 3");
 	DispenserConfiguration med4 = DispenserConfiguration("Medicine 4");
 	med4.DispensingTimes[0] = _tm;
 	DispenserConfiguration med5 = DispenserConfiguration("Medicine 5");
 	DispenserConfiguration med6 = DispenserConfiguration("Medicine 6");
+	med6.DispensingTimes[0] = _tm;
 	DispenserConfiguration med7 = DispenserConfiguration("Medicine 7");
-	med7.DispensingTimes[0] = _tm;
+	// med7.DispensingTimes[0] = _tm;
 	DispenserConfiguration med8 = DispenserConfiguration("Medicine 8");
 
 	// Initialize with test values
