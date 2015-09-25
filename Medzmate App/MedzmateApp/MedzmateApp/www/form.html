@@ -10,9 +10,7 @@
 
         <!-- MedzmateApp references -->
         <link href="css/formStyle.css" rel="stylesheet" />
-        <script type="text/javascript" src="scripts/loadingDeckSelector.js"></script>
-        <script type="text/javascript" src="scripts/calendar.js"></script>
-        <script type="text/javascript" src="scripts/formProcesor.js"></script>
+        
 
         <!-- Jquerry ui references TODO get the files local-->
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
@@ -26,6 +24,11 @@
                 background-color:royalblue;
             }
         </style>
+
+        <!--Js files-->
+        <script type="text/javascript" src="scripts/loadingDeckSelector.js"></script>
+        <script type="text/javascript" src="scripts/calendar.js"></script>
+        <script type="text/javascript" src="scripts/formProcesor.js"></script>
   
 </head>
 <body id="main_body">
@@ -47,10 +50,10 @@
             <li id="li_2">
                 <label class="description" for="Doctors_Name">Doctor's Name </label>
                 <span>
-                    <input id="Doctors_Name_1" name="Doctors_Name_1" class="element text" maxlength="255" size="8"  placeholder ="First" />
+                    <input id="Doctors_Name_1" name="Doctors_First_Name" class="element text" maxlength="255" size="8"  placeholder ="First" />
                 </span>
                 <span>
-                    <input id="Doctors_Name_2" name="Doctors_Name_2" class="element text" maxlength="255" size="14" placeholder ="Last" />
+                    <input id="Doctors_Name_2" name="Doctors_Last_Name" class="element text" maxlength="255" size="14" placeholder ="Last" />
                 </span>
             </li>
             <li id="li_3">
@@ -90,23 +93,23 @@
             <li id="li_10">
                 <label class="description" for="frequency">Frequency </label>
                 <fieldset data-role="controlgroup" data-type="horizontal" data-mini="false">
-                        <input type="checkbox" id="Monday" name="Monday" class="checkbox">
+                        <input type="checkbox" id="Monday" name="Monday" class="frqcheckbox">
                         <label for="Monday" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left" role="button"><span class="ui-button-text">Mo</span></label>
-                        <input type="checkbox" id="Tuesday" name="Tuesday" class="checkbox">
+                        <input type="checkbox" id="Tuesday" name="Tuesday" class="frqcheckbox">
                         <label for="Tuesday" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button"><span class="ui-button-text">Tu</span></label>
-                        <input type="checkbox" id="Whednesday" name="Whednesday" class="checkbox">
+                        <input type="checkbox" id="Whednesday" name="Whednesday" class="frqcheckbox">
                         <label for="Whednesday" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" role="button"><span class="ui-button-text">Wh</span></label>
-                        <input type="checkbox" id="Thursday"name="Thursday" class="checkbox">
+                        <input type="checkbox" id="Thursday"name="Thursday" class="frqcheckbox">
                         <label for="Thursday" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left" role="button"><span class="ui-button-text">Th</span></label>
                     </fieldset>  
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="false">
-                        <input type="checkbox" id="Friday" name="Friday" class="checkbox">
+                        <input type="checkbox" id="Friday" name="Friday" class="frqcheckbox">
                         <label for="Friday" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button"><span class="ui-button-text">Fr</span></label>
-                        <input type="checkbox" id="Saturday" name="Saturday" class="checkbox">
+                        <input type="checkbox" id="Saturday" name="Saturday" class="frqcheckbox">
                         <label for="Saturday" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" role="button"><span class="ui-button-text">St</span></label>
-                        <input type="checkbox" id="Sunday" name="Sunday" class="checkbox">
+                        <input type="checkbox" id="Sunday" name="Sunday" class="frqcheckbox">
                         <label for="Sunday" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button"><span class="ui-button-text">Su</span></label>
-                        <input type="checkbox" id="Daily" name="Daily" class="checkbox" checked="checked">
+                        <input type="checkbox" id="Daily" name="Daily" class="frqcheckbox" checked="checked">
                         <label for="Daily" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" role="button"><span class="ui-button-text">Daily</span></label>
                     </fieldset >                 
                 </li>
@@ -142,7 +145,7 @@
                 </div>
             </li>            
             <li class="buttons">
-                <input type="hidden" name="form_id" value="1050292" />
+                <input type="hidden" name="Straw_id" value="Set_straw_ID_here" />
                 <a href="#popupDialog" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-transition="pop" data-icon="delete">Cancel</a> 
                 <input id="saveForm" class="button_text" type="submit" data-inline="true" name="submit" data-theme="b" Check - data-icon="check" value="Submit" />
             </li>
@@ -165,12 +168,7 @@
 </div>
 <img id="bottom" src="images/bottom.png" alt="">
     <script>
-        $("#form_1050292").submit(function (event) {
-            event.preventDefault();
-            console.log($(this).serializeArray());
-            console.log($(this).serialize());
-            navigateToLoadingDeck();
-        });
+        initialize();
     </script>
 	</body>
 </html>
