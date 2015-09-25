@@ -10,15 +10,25 @@
 
         <!-- MedzmateApp references -->
         <link href="css/formStyle.css" rel="stylesheet" />
-        <script type="text/javascript" src="scripts/loadingDeckSelector.js"></script>
-        <script type="text/javascript" src="scripts/calendar.js"></script>
-        <script type="text/javascript" src="scripts/formProcesor.js"></script>
+        
 
         <!-- Jquerry ui references TODO get the files local-->
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
+        <!-- Override Jquerry ui background color-->
+        <style>
+            .ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper
+            {
+                background-color:royalblue;
+            }
+        </style>
+
+        <!--Js files-->
+        <script type="text/javascript" src="scripts/loadingDeckSelector.js"></script>
+        <script type="text/javascript" src="scripts/calendar.js"></script>
+        <script type="text/javascript" src="scripts/formProcesor.js"></script>
   
 </head>
 <body id="main_body">
@@ -40,10 +50,10 @@
             <li id="li_2">
                 <label class="description" for="Doctors_Name">Doctor's Name </label>
                 <span>
-                    <input id="Doctors_Name_1" name="Doctors_Name_1" class="element text" maxlength="255" size="8"  placeholder ="First" />
+                    <input id="Doctors_Name_1" name="Doctors_First_Name" class="element text" maxlength="255" size="8"  placeholder ="First" />
                 </span>
                 <span>
-                    <input id="Doctors_Name_2" name="Doctors_Name_2" class="element text" maxlength="255" size="14" placeholder ="Last" />
+                    <input id="Doctors_Name_2" name="Doctors_Last_Name" class="element text" maxlength="255" size="14" placeholder ="Last" />
                 </span>
             </li>
             <li id="li_3">
@@ -83,61 +93,61 @@
             <li id="li_10">
                 <label class="description" for="frequency">Frequency </label>
                 <fieldset data-role="controlgroup" data-type="horizontal" data-mini="false">
-                        <input type="checkbox" id="Monday" name="Monday" class="ui-helper-hidden-accessible">
+                        <input type="checkbox" id="Monday" name="Monday" class="frqcheckbox">
                         <label for="Monday" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left" role="button"><span class="ui-button-text">Mo</span></label>
-                        <input type="checkbox" id="Tuesday" class="ui-helper-hidden-accessible">
+                        <input type="checkbox" id="Tuesday" name="Tuesday" class="frqcheckbox">
                         <label for="Tuesday" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button"><span class="ui-button-text">Tu</span></label>
-                        <input type="checkbox" id="Whednesday" class="ui-helper-hidden-accessible">
+                        <input type="checkbox" id="Whednesday" name="Whednesday" class="frqcheckbox">
                         <label for="Whednesday" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" role="button"><span class="ui-button-text">Wh</span></label>
-                        <input type="checkbox" id="Thursday" class="ui-helper-hidden-accessible">
+                        <input type="checkbox" id="Thursday"name="Thursday" class="frqcheckbox">
                         <label for="Thursday" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left" role="button"><span class="ui-button-text">Th</span></label>
                     </fieldset>  
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="false">
-                        <input type="checkbox" id="Friday" class="ui-helper-hidden-accessible">
+                        <input type="checkbox" id="Friday" name="Friday" class="frqcheckbox">
                         <label for="Friday" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button"><span class="ui-button-text">Fr</span></label>
-                        <input type="checkbox" id="Saturday" class="ui-helper-hidden-accessible">
+                        <input type="checkbox" id="Saturday" name="Saturday" class="frqcheckbox">
                         <label for="Saturday" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" role="button"><span class="ui-button-text">St</span></label>
-                        <input type="checkbox" id="Sunday" class="ui-helper-hidden-accessible">
+                        <input type="checkbox" id="Sunday" name="Sunday" class="frqcheckbox">
                         <label for="Sunday" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button"><span class="ui-button-text">Su</span></label>
-                        <input type="checkbox" id="Daily" class="ui-helper-hidden-accessible" checked="checked">
+                        <input type="checkbox" id="Daily" name="Daily" class="frqcheckbox" checked="checked">
                         <label for="Daily" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" role="button"><span class="ui-button-text">Daily</span></label>
                     </fieldset >                 
                 </li>
             <li id="li_8">
-                <label class="description" for="element_8">Link with other container </label>
+                <label class="description" for="Other_Container">Link with other container </label>
                 <div data-role="collapsible">
                     <h3>Link with other container</h3>
                     <p>
-                        <input id="element_8_1" name="element_8_1" type="checkbox" value="1" />
-                        <label for="element_8_1">A</label>
-                        <input id="element_8_2" name="element_8_2" type="checkbox" value="1" />
-                        <label for="element_8_2">B</label>
-                        <input id="element_8_3" name="element_8_3" type="checkbox" value="1" />
-                        <label for="element_8_3">C</label>
-                        <input id="element_8_4" name="element_8_4" type="checkbox" value="1" />
-                        <label for="element_8_4">D</label>
-                        <input id="element_8_5" name="element_8_5" type="checkbox" value="1" />
-                        <label for="element_8_5">E</label> 
+                        <input id="Other_Container_1" name="Other_Container_1" type="checkbox" value="1" />
+                        <label for="Other_Container_1">A</label>
+                        <input id="Other_Container_2" name="element_8_2" type="checkbox" value="1" />
+                        <label for="Other_Container_2">B</label>
+                        <input id="Other_Container_3" name="element_8_3" type="checkbox" value="1" />
+                        <label for="Other_Container_3">C</label>
+                        <input id="Other_Container_4" name="element_8_4" type="checkbox" value="1" />
+                        <label for="Other_Container8_4">D</label>
+                        <input id="Other_Container_5" name="element_8_5" type="checkbox" value="1" />
+                        <label for="Other_Container_5">E</label> 
                      </p>
                 </div>
                                   
             </li>
             <li id="li_5">
-                <label class="description" for="element_5">Symtoms </label>
+                <label class="description" for="Symtoms">Symtoms </label>
                 <div>
-                    <textarea id="element_5" name="element_5" placeholder ="What are the main symptoms?" class="element textarea medium"></textarea>
+                    <textarea id="Symtoms" name="Symtoms" placeholder ="What are the main symptoms?" class="element textarea medium"></textarea>
                 </div>
             </li>
             <li id="li_6">
-                <label class="description" for="element_6">Side Effects </label>
+                <label class="description" for="Side_Effects">Side Effects </label>
                 <div>
-                    <textarea id="element_6" name="element_6" placeholder ="What are the major side effects?" class="element textarea medium"></textarea>
+                    <textarea id="Side_Effects" name="Side_Effects" placeholder ="What are the major side effects?" class="element textarea medium"></textarea>
                 </div>
             </li>            
             <li class="buttons">
-                <input type="hidden" name="form_id" value="1050292" />
+                <input type="hidden" name="Straw_id" value="Set_straw_ID_here" />
                 <a href="#popupDialog" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-transition="pop" data-icon="delete">Cancel</a> 
-                <input id="saveForm" class="button_text" type="submit" data-inline="true" name="submit" data-theme="b" Check - data-icon="check" value="Submit" onclick="proccessForm()"/>
+                <input id="saveForm" class="button_text" type="submit" data-inline="true" name="submit" data-theme="b" Check - data-icon="check" value="Submit" />
             </li>
             
         </ul>
@@ -157,5 +167,8 @@
     
 </div>
 <img id="bottom" src="images/bottom.png" alt="">
+    <script>
+        initialize();
+    </script>
 	</body>
 </html>
