@@ -5,7 +5,6 @@
 #include <iostream>
 #include <ctime>
 
-
 using namespace System;
 
 int main()
@@ -23,6 +22,8 @@ int main()
 	med2.DispensingTimes[0] = _tm;
 	med2.DispensingTimes[0].tm_hour += 1;
 	DispenserConfiguration med3 = DispenserConfiguration("Medicine 3");
+	med3.DispensingTimes[0] = _tm;
+	med3.DispensingTimes[0].tm_hour += 1;
 	DispenserConfiguration med4 = DispenserConfiguration("Medicine 4");
 	med4.DispensingTimes[0] = _tm;
 	DispenserConfiguration med5 = DispenserConfiguration("Medicine 5");
