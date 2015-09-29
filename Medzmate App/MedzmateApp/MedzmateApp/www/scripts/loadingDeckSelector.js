@@ -1,7 +1,7 @@
 ﻿
-var strawId = "";
 //brings medcine inf screen on button click
-function openDetails(btnId) {
+function openDetails(btnId) {    
+    var strawId = "";
     strawId = btnId;
     window.localStorage.setItem("currentStraw", strawId);
     console.log(window.localStorage.getItem("currentStraw"));
