@@ -109,17 +109,12 @@
     "res\\icons\\windows\\Square44x44Logo.scale-240.png",
     "res\\screens\\android\\screen-mdpi-portrait.png",
     "www\\scripts\\formProcesor.js",
-    "www\\css\\images\\ui-bg_flat_0_aaaaaa_40x100.png",
-    "www\\scripts\\loadingdeckselector.js"
+    "www\\css\\images\\ui-bg_flat_0_aaaaaa_40x100.png"
   ],
   "deletedFilesIos": [],
   "addedPluginsIos": [],
   "deletedPluginsIos": [],
-  "changedFiles": [
-    "www\\scripts\\formProcesor.js",
-    "www\\scripts\\loadingdeckselector.js",
-    "www\\form.html"
-  ],
+  "changedFiles": [],
   "deletedFiles": [],
   "addedPlugins": [],
   "deletedPlugins": []
