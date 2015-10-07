@@ -76,17 +76,17 @@
 
             </li>
             <li id="li_7">
-                <label class="description" for="nDoses">No. of Doses (per day) </label>
+                <label class="description" for="Number_of_Doses">No. of Doses (per day) </label>
                 <div>
-                    <select class="element select small" id="nDoses" name="nDoses" data-native-menu="false"  >
+                    <select class="element select small" id="Number_of_Doses" name="Number_of_Doses" data-native-menu="false"  >
                         <option value="1" selected>1 per day ( 1 every 24 hrs)</option>
                         <option value="2">2 per day ( 1 every 12 hrs)</option>
                         <option value="3">3 per day ( 1 every  8 hrs)</option>
                         <option value="4">4 per day ( 1 every  6 hrs)</option>
-                        <option value="5">6 per day ( 1 every  4 hrs)</option>
-                        <option value="6">8 per day ( 1 every  3 hrs)</option>
-                        <option value="7">12 per day ( 1 every  2 hrs)</option>
-                        <option value="8">24 per day ( 1 every hour)</option>
+                        <option value="6">6 per day ( 1 every  4 hrs)</option>
+                        <option value="8">8 per day ( 1 every  3 hrs)</option>
+                        <option value="12">12 per day ( 1 every  2 hrs)</option>
+                        <option value="24">24 per day ( 1 every hour)</option>
                     </select>
                 </div>
             </li>
@@ -147,7 +147,8 @@
             <li class="buttons">
                 <input type="hidden" id ="Straw_id" name="Straw_id" value="Set_straw_ID_here" />
                 <a href="#popupDialog" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-transition="pop" data-icon="delete">Cancel</a> 
-                <input id="saveForm" class="button_text" type="submit" data-inline="true" name="submit" data-theme="b" Check - data-icon="check" value="Submit" />
+               <!-- <a href="#confirmDialog" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-transition="pop" data-theme="b" Check - data-icon="check">Submit</a> -->
+                 <input id="saveForm" class="button_text" type="submit" data-inline="true" name="submit" data-theme="b" Check - data-icon="check" value="Submit" />
             </li>
             
         </ul>
@@ -161,6 +162,18 @@
                 <p>This action cannot be undone.</p>
                 <a href="#" data-role="button" data-inline="true" data-rel="back" data-icon="delete" data-theme="a">Stay in the form</a>
                 <input id="cancelForm" class="button_text" type="button" data-inline="true" name="cancel" data-theme="b" data-icon="check" value="Take me out" data-rel="dialog" onclick="navigateToLoadingDeck()" />
+            </div>
+        </div>
+        <div data-role="popup" id="confirmDialog" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
+            <div data-role="header" data-theme="a" class="ui-corner-top">
+                <h1>Submit Page?</h1>
+            </div>
+            <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
+                <h3 class="ui-title">Is this infromation correct?</h3>
+                <p id="eldato"></p>
+                <p><b>By clicking "Submit" you confirm that you have read the information in this page and you want to submit it to the medzmate station.</b></p>
+                <a href="#" data-role="button" data-inline="true" data-rel="back" data-icon="delete" data-theme="a">Stay in the form</a>
+                <input id="submitForm" class="button_text" type="button" data-inline="true" name="submit" data-theme="b" data-icon="check" value="Submit" data-rel="dialog" onclick="onSubmitClick()" />
             </div>
         </div>
     </form>

@@ -11,20 +11,15 @@ function populate(frm, id) {
         var test = JSON.stringify(jsonOB, null, 4);
 
         $.each(jsonOB, function () {
-            console.log(this['name'] + " " + this['value']);
             $('input[name =' + this['name']+']').val(this['value']);
             $('textarea[name =' + this['name'] + ']').val(this['value']); //set systoms and effects
             $('input[name =' + this['name'] + ']').attr("checked", true); //set frequency values and link with other containers
-            if (this['name'] == 'nDoses')
+            if (this['name'] == 'Number_of_Doses')
             {
-                $('#'+this['name'] +' option[value=' + this['value'] + ']').attr('selected', 'selected');
+                $("#" + this['name']).val(this['value']);
             }
             
         });
-
-       // $("#form_1050292").addClass("ui-state-disabled");
-       // $("input").addClass("ui-state-disabled");
-        //$("textarea").addClass("ui-state-disabled");
 
     }
     
@@ -32,6 +27,24 @@ function populate(frm, id) {
 
 function saveDataToFile(strawID, jsonData) {
     window.localStorage.setItem(strawID, jsonData);
+}
+
+function onSubmitClick()
+{
+    var strawID = document.getElementById('Straw_id').value;
+    var schedule = window.localStorage.getItem("temp");
+    saveDataToFile(strawID, schedule);
+    navigateToLoadingDeck();
+}
+
+function setconfrimationText(jobj)
+{
+    var test = "";
+    $('#eldato').empty();
+    $.each(jobj, function () {
+        var s = this['name'].replace(/\_/g, ' ');
+        $('#eldato').append('<p>' + s + ": " + this['value'] + '</p>');
+    });
 }
 
 function initialize()
@@ -45,10 +58,11 @@ function initialize()
                                             {
                                                 event.preventDefault();
                                                 var jobj = $(this).serializeArray();
-                                                var test = JSON.stringify(jobj);
-                                                saveDataToFile(strawID, test);
-                                                //alert(test);
-                                                navigateToLoadingDeck();
+                                                var tempSchedule = JSON.stringify(jobj);
+                                                saveDataToFile("temp", tempSchedule); // save the form to a temp location 
+                                                setconfrimationText(jobj);
+                                                $('#confirmDialog').popup("open");
+                                                console.log("called popup");
                                             }
     );
 
