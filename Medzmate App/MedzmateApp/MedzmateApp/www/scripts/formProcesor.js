@@ -12,7 +12,7 @@ function populate(frm, id) {
 
         $.each(jsonOB, function () {
             $('input[name =' + this['name']+']').val(this['value']);
-            $('textarea[name =' + this['name'] + ']').val(this['value']); //set systoms and effects
+            $('textarea[name =' + this['name'] + ']').val(this['value']); //set symptoms and effects
             $('input[name =' + this['name'] + ']').attr("checked", true); //set frequency values and link with other containers
             if (this['name'] == 'Number_of_Doses')
             {
@@ -25,6 +25,55 @@ function populate(frm, id) {
     
 }
 
+function download(filename, content)
+{
+    function onResolveSuccess(dir) {
+        console.log(filename+" fileEntry.name " , dir);
+        dir.getFile(filename, { create: true }, function (file) {
+            console.log("got the file", file);
+            logOb = file;
+            writeLog("\r\n\r\n***************************************\r\nSchedule saved ");
+        },fail);
+        
+    }
+
+    function writeLog(str) {
+        if (!logOb) return;
+        var log = str + " [" + (new Date()) + "]\r\n"+content+"\r\n***************************************";
+        console.log("going to log " + log);
+        logOb.createWriter(function (fileWriter) {
+
+            fileWriter.seek(fileWriter.length);
+
+            var blob = new Blob([log], { type: 'text/plain' });
+            fileWriter.write(blob);
+            console.log("ok, in theory i worked");
+        }, fail);
+    }
+
+    function fail(evt) {
+        console.log("Error "+evt.code);
+    }
+        
+    window.resolveLocalFileSystemURL(cordova.file.externalRootDirectory, onResolveSuccess, fail);
+
+}
+
+function createLog(strawId, jobj)
+{
+    var jsonOB = JSON.parse(jobj);
+    var myDate = new Date();
+    var strDate = (myDate.getMonth() + 1) + '/' + (myDate.getDate()) + '/' + myDate.getFullYear();
+    var strTime = myDate.getHours() + ':' + myDate.getMinutes() + ':' + myDate.getSeconds();
+    var test = "StrawId " + strawId+"schedule log";
+    $.each(jsonOB, function () {
+        var s = this['name'].replace(/\_/g, ' ');
+        test = test + " \r\n" + s + ": " + this['value'];
+    });
+    
+    download("MedzMate_" + strawId+  ".txt", test); //needs to be replaced with medzmate id
+}
+
 function saveDataToFile(strawID, jsonData) {
     window.localStorage.setItem(strawID, jsonData);
 }
@@ -34,12 +83,12 @@ function onSubmitClick()
     var strawID = document.getElementById('Straw_id').value;
     var schedule = window.localStorage.getItem("temp");
     saveDataToFile(strawID, schedule);
-    navigateToLoadingDeck();
+    createLog(strawID, schedule)
+  //  navigateToLoadingDeck();
 }
 
 function setconfrimationText(jobj)
 {
-    var test = "";
     $('#eldato').empty();
     $.each(jobj, function () {
         var s = this['name'].replace(/\_/g, ' ');
@@ -69,4 +118,3 @@ function initialize()
     populate(thisForm, strawID);
 
 }
-

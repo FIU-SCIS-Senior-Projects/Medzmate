@@ -13,9 +13,14 @@
         
 
         <!-- Jquerry ui references TODO get the files local-->
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+        <script src="scripts/jquery-1.11.1.min.js"></script> 
+        <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
+    
+        <!-- Cordova reference, this is added to your app when it's built. -->
+        <script src="cordova.js"></script>
+        <script src="scripts/platformOverrides.js"></script>
+        <script src="cordova_plugins.js"></script>
 
         <!-- Override Jquerry ui background color-->
         <style>
@@ -133,9 +138,9 @@
                                   
             </li>
             <li id="li_5">
-                <label class="description" for="Symtoms">Symtoms </label>
+                <label class="description" for="Symptoms">Symptoms </label>
                 <div>
-                    <textarea id="Symtoms" name="Symtoms" placeholder ="What are the main symptoms?" class="element textarea medium"></textarea>
+                    <textarea id="Symptoms" name="Symptoms" placeholder ="What are the main symptoms?" class="element textarea medium"></textarea>
                 </div>
             </li>
             <li id="li_6">
