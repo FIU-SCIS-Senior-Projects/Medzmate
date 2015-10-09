@@ -1,7 +1,9 @@
 ﻿
-var btnId ="";
 //brings medcine inf screen on button click
-function openDetails(src) {
-    btnId = src;
+function openDetails(btnId) {    
+    var strawId = "";
+    strawId = btnId;
+    window.localStorage.setItem("currentStraw", strawId);
+    console.log(window.localStorage.getItem("currentStraw"));
     window.location = "form.html";
 }
