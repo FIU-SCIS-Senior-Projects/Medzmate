@@ -35,16 +35,16 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Validate Include="ArchitectureDiagram.layerdiagram">
+    <Validate Include="Medzamate.layerdiagram">
       <SubType>Content</SubType>
     </Validate>
-    <Validate Include="ArchitectureDiagram.layerdiagram.layout">
+    <Validate Include="Medzamate.layerdiagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>ArchitectureDiagram.layerdiagram</DependentUpon>
+      <DependentUpon>Medzamate.layerdiagram</DependentUpon>
     </Validate>
-    <Validate Include="ArchitectureDiagram.layerdiagram.suppressions">
+    <Validate Include="Medzamate.layerdiagram.suppressions">
       <SubType>Content</SubType>
-      <DependentUpon>ArchitectureDiagram.layerdiagram</DependentUpon>
+      <DependentUpon>Medzamate.layerdiagram</DependentUpon>
     </Validate>
   </ItemGroup>
 </Project>
