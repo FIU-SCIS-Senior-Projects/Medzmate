@@ -84,7 +84,7 @@ function onSubmitClick()
     var schedule = window.localStorage.getItem("temp");
     saveDataToFile(strawID, schedule);
     createLog(strawID, schedule)
-  //  navigateToLoadingDeck();
+    navigateToLoadingDeck();
 }
 
 function setconfrimationText(jobj)
