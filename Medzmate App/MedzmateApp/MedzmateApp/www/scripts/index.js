@@ -14,7 +14,7 @@
         
         // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
         document.getElementById("btnLogin").onclick = function () {
-            if (validateLogin(document.getElementById("userName").value)) {
+            if (validateLogin(document.getElementById("username").value)) {
                 window.location = "loadingDeckSelector.html"; //"form.html";
             }
             else
