@@ -108,7 +108,6 @@
     "res\\icons\\ios\\icon-60-3x.png",
     "plugins\\cordova-plugin-whitelist\\whitelist.js",
     "plugins\\fetch.json",
-    "config.xml",
     "plugins\\cordova-plugin-file\\www\\fileSystems.js",
     "plugins\\cordova-plugin-file-transfer\\src\\wp\\FileTransfer.cs",
     "plugins\\cordova-plugin-file\\www\\blackberry10\\getParent.js",
@@ -273,7 +272,15 @@
     "res\\icons\\windows\\Square44x44Logo.scale-240.png",
     "res\\screens\\android\\screen-mdpi-portrait.png",
     "www\\scripts\\formProcesor.js",
-    "www\\css\\images\\ui-bg_flat_0_aaaaaa_40x100.png"
+    "www\\css\\images\\ui-bg_flat_0_aaaaaa_40x100.png",
+    "www\\css\\index.css~RF25d304b7.TMP",
+    "www\\css\\index.css~RF25db066c.TMP",
+    "www\\css\\index.css~RF25e34253.TMP",
+    "www\\scripts\\index.js~RF25e5afb6.TMP",
+    "www\\css\\index.css~RF25f399f5.TMP",
+    "www\\css\\index.css~RF25f9dcde.TMP",
+    "www\\css\\index.css~RF26075f08.TMP",
+    "config.xml"
   ],
   "deletedFilesIos": [],
   "addedPluginsIos": [
@@ -282,9 +289,7 @@
     "cordova-plugin-whitelist@1.0.0"
   ],
   "deletedPluginsIos": [],
-  "changedFiles": [
-    "www\\scripts\\formProcesor.js"
-  ],
+  "changedFiles": [],
   "deletedFiles": [],
   "addedPlugins": [],
   "deletedPlugins": []
