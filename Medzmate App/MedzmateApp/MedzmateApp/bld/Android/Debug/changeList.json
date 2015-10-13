@@ -273,14 +273,11 @@
     "res\\screens\\android\\screen-mdpi-portrait.png",
     "www\\scripts\\formProcesor.js",
     "www\\css\\images\\ui-bg_flat_0_aaaaaa_40x100.png",
-    "www\\css\\index.css~RF25d304b7.TMP",
-    "www\\css\\index.css~RF25db066c.TMP",
-    "www\\css\\index.css~RF25e34253.TMP",
-    "www\\scripts\\index.js~RF25e5afb6.TMP",
-    "www\\css\\index.css~RF25f399f5.TMP",
-    "www\\css\\index.css~RF25f9dcde.TMP",
-    "www\\css\\index.css~RF26075f08.TMP",
-    "config.xml"
+    "config.xml",
+    "www\\scripts\\logCreator.js",
+    "www\\scripts\\securityHandler.js",
+    "www\\scripts\\securityHandler.js~RF303ce118.TMP",
+    "www\\scripts\\index.js~RF305addde.TMP"
   ],
   "deletedFilesIos": [],
   "addedPluginsIos": [
@@ -289,7 +286,11 @@
     "cordova-plugin-whitelist@1.0.0"
   ],
   "deletedPluginsIos": [],
-  "changedFiles": [],
+  "changedFiles": [
+    "www\\index.html",
+    "www\\scripts\\index.js",
+    "www\\scripts\\index.js~RF305addde.TMP"
+  ],
   "deletedFiles": [],
   "addedPlugins": [],
   "deletedPlugins": []
