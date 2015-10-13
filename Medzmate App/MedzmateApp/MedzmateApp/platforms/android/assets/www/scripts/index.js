@@ -14,18 +14,18 @@
         
         // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
         document.getElementById("btnLogin").onclick = function () {
-            if (validateLogin(document.getElementById("username").value)) {
+            $("#btnLogin", this).attr("disabled", "disabled");
+            if (validateLogin()) {
                 window.location = "loadingDeckSelector.html"; //"form.html";
             }
-            else
-                alert("wrong user");
+            else {
+                alert("Invalid Username and/or Password \n Please try again");
+                $("#btnLogin").removeAttr("disabled");
+            }
+            
         }
     };
-
-    // function to validate login
-    function validateLogin(username) {
-        return true; //username == "pedro"
-    }
+   
 
     function onPause() {
         // TODO: This application has been suspended. Save application state here.
