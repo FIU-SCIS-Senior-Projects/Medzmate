@@ -25,53 +25,19 @@ function populate(frm, id) {
     
 }
 
-function download(filename, content)
-{
-    function onResolveSuccess(dir) {
-        console.log(filename+" fileEntry.name " , dir);
-        dir.getFile(filename, { create: true }, function (file) {
-            console.log("got the file", file);
-            logOb = file;
-            writeLog("\r\n\r\n***************************************\r\nSchedule saved ");
-        },fail);
-        
-    }
-
-    function writeLog(str) {
-        if (!logOb) return;
-        var log = str + " [" + (new Date()) + "]\r\n"+content+"\r\n***************************************";
-        console.log("going to log " + log);
-        logOb.createWriter(function (fileWriter) {
-
-            fileWriter.seek(fileWriter.length);
-
-            var blob = new Blob([log], { type: 'text/plain' });
-            fileWriter.write(blob);
-            console.log("ok, in theory i worked");
-        }, fail);
-    }
-
-    function fail(evt) {
-        console.log("Error "+evt.code);
-    }
-        
-    window.resolveLocalFileSystemURL(cordova.file.externalRootDirectory, onResolveSuccess, fail);
-
-}
-
 function createLog(strawId, jobj)
 {
     var jsonOB = JSON.parse(jobj);
     var myDate = new Date();
     var strDate = (myDate.getMonth() + 1) + '/' + (myDate.getDate()) + '/' + myDate.getFullYear();
     var strTime = myDate.getHours() + ':' + myDate.getMinutes() + ':' + myDate.getSeconds();
-    var test = "StrawId " + strawId+"schedule log";
+    var test = "StrawId " + strawId + "\r\nSchedule log";
     $.each(jsonOB, function () {
         var s = this['name'].replace(/\_/g, ' ');
         test = test + " \r\n" + s + ": " + this['value'];
     });
     
-    download("MedzMate_" + strawId+  ".txt", test); //needs to be replaced with medzmate id
+    writeTolog("MedzMate_" + strawId + ".txt", test, navigateToLoadingDeck); //needs to be replaced with medzmate id
 }
 
 function saveDataToFile(strawID, jsonData) {
@@ -84,7 +50,7 @@ function onSubmitClick()
     var schedule = window.localStorage.getItem("temp");
     saveDataToFile(strawID, schedule);
     createLog(strawID, schedule)
-    navigateToLoadingDeck();
+   // navigateToLoadingDeck();
 }
 
 function setconfrimationText(jobj)

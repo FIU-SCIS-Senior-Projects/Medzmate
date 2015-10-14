@@ -108,6 +108,7 @@
     "res\\icons\\ios\\icon-60-3x.png",
     "plugins\\cordova-plugin-whitelist\\whitelist.js",
     "plugins\\fetch.json",
+    "config.xml",
     "plugins\\cordova-plugin-file\\www\\fileSystems.js",
     "plugins\\cordova-plugin-file-transfer\\src\\wp\\FileTransfer.cs",
     "plugins\\cordova-plugin-file\\www\\blackberry10\\getParent.js",
@@ -161,6 +162,7 @@
     "build.json",
     "plugins\\cordova-plugin-file\\www\\blackberry10\\requestAnimationFrame.js",
     "plugins\\cordova-plugin-file\\www\\Flags.js",
+    "www\\scripts\\logCreator.js",
     "res\\icons\\wp8\\Background.png",
     "plugins\\cordova-plugin-file\\www\\blackberry10\\readAsText.js",
     "plugins\\cordova-plugin-file\\README.md",
@@ -168,6 +170,7 @@
     "res\\icons\\ios\\icon-40.png",
     "plugins\\cordova-plugin-file\\www\\resolveLocalFileSystemURI.js",
     "plugins\\cordova-plugin-file\\src\\ios\\CDVLocalFilesystem.m",
+    "www\\scripts\\securityHandler.js",
     "res\\icons\\ios\\icon-60-2x.png",
     "res\\screens\\android\\screen-ldpi-portrait.png",
     "plugins\\cordova-plugin-file-transfer\\www\\firefoxos\\FileTransferProxy.js",
@@ -273,11 +276,10 @@
     "res\\screens\\android\\screen-mdpi-portrait.png",
     "www\\scripts\\formProcesor.js",
     "www\\css\\images\\ui-bg_flat_0_aaaaaa_40x100.png",
-    "config.xml",
-    "www\\scripts\\logCreator.js",
-    "www\\scripts\\securityHandler.js",
-    "www\\scripts\\securityHandler.js~RF303ce118.TMP",
-    "www\\scripts\\index.js~RF305addde.TMP"
+    "www\\scripts\\logcreator.js",
+    "www\\scripts\\formprocesor.js",
+    "www\\scripts\\formProcesor.js~RF39cd9b.TMP",
+    "www\\scripts\\logCreator.js~RFd31623.TMP"
   ],
   "deletedFilesIos": [],
   "addedPluginsIos": [
@@ -287,9 +289,7 @@
   ],
   "deletedPluginsIos": [],
   "changedFiles": [
-    "www\\index.html",
-    "www\\scripts\\index.js",
-    "www\\scripts\\index.js~RF305addde.TMP"
+    "www\\scripts\\logcreator.js"
   ],
   "deletedFiles": [],
   "addedPlugins": [],
