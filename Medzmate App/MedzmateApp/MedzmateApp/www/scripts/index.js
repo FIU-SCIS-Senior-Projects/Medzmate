@@ -32,7 +32,12 @@
             
         }
     };
-   
+
+    document.addEventListener("backbutton", onBackKeyDown, false);
+    function onBackKeyDown(e) {
+        console.log("backbutton pressed")
+        e.preventDefault();
+    }
 
     function onPause() {
         // TODO: This application has been suspended. Save application state here.

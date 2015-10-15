@@ -7,3 +7,9 @@ function openDetails(btnId) {
     console.log(window.localStorage.getItem("currentStraw"));
     window.location = "form.html";
 }
+
+document.addEventListener("backbutton", onBackKeyDown, false);
+function onBackKeyDown(e) {
+    console.log("backbutton pressed")
+    e.preventDefault();
+}

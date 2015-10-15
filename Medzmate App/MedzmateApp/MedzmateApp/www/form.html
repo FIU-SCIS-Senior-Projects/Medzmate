@@ -7,6 +7,8 @@
         <title>Medicine Information</title>
         <!--Prevent zooming of the app-->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <!-- Enable all requests, inline styles, and eval() -->
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
 
         <!-- MedzmateApp references -->
         <link href="css/formStyle.css" rel="stylesheet" />
@@ -31,7 +33,6 @@
         </style>
 
         <!--Js files-->
-        <script type="text/javascript" src="scripts/loadingDeckSelector.js"></script>
         <script type="text/javascript" src="scripts/calendar.js"></script>
         <script type="text/javascript" src="scripts/logCreator.js"></script>
         <script type="text/javascript" src="scripts/formProcesor.js"></script>
