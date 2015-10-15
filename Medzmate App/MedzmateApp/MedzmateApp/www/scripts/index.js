@@ -15,17 +15,29 @@
         // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
         document.getElementById("btnLogin").onclick = function () {
             $("#btnLogin", this).attr("disabled", "disabled");
-            if (validateLogin()) {
-                window.location = "loadingDeckSelector.html"; //"form.html";
-            }
+            var medzMateId = document.getElementById("station").value;
+            if (medzMateId !="")
+                if (validateLogin()) {
+                    writeTolog("MedzMate_General_log"+".txt", "User Loged in", function callback(test) { window.location = "loadingDeckSelector.html"; })
+                }
+                else {
+                    alert("Invalid Username and/or Password \n Please try again");
+                    $("#btnLogin").removeAttr("disabled");
+                }
             else {
-                alert("Invalid Username and/or Password \n Please try again");
+                alert("Medzmate Id cannot be blank. Please try again");
                 $("#btnLogin").removeAttr("disabled");
             }
+
             
         }
     };
-   
+
+    document.addEventListener("backbutton", onBackKeyDown, false);
+    function onBackKeyDown(e) {
+        console.log("backbutton pressed")
+        e.preventDefault();
+    }
 
     function onPause() {
         // TODO: This application has been suspended. Save application state here.
