@@ -17,12 +17,34 @@ function sendRequestToServer(medzMateId)
     
     if (u != '' && p != '')
     {
-        $.post("http://"+medzMateId+"/service.cfc?method=login&returnformat=json", {username:u,password:p}, function(res)
-        {
-           // return res;
-        },"json");
-    
-        return (u == "Pedro" && p == "1234")
+        //console.log("posting" + "http://" + medzMateId + ":3080");
+        //$.post("http://" + medzMateId + ":3080", { username: u, password: p }, function (res) ///service.cfc?method=login&returnformat=json
+        //{
+        //    // return res;
+        //    console.log("hiso algo fileEntry.name ",res);
+        //});
+        var isValid = 1;
+        $.ajax({
+            url: "http://" + medzMateId + ":3080/login",
+            // dataType: "jsonp"
+            data: { username: u, password: p },
+            type: 'POST',
+            jsonpCallback: 'callback', // this is not relevant to the POST anymore
+            success: function (data) {
+                console.log('Success: ', data);
+                if (data=="OK loged") {
+                    isValid = 0;
+                    console.log("isValid seccess", isValid);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.log('Error: ' + error.message);
+            },
+            async: false
+        });
+        
     }
-    return false;
+
+    console.log("isValid ", isValid);
+    return isValid <1;
 }

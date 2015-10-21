@@ -11,8 +11,8 @@
 
     }      
 
-    window.resolveLocalFileSystemURL(cordova.file.externalRootDirectory, gotFS, fail);
-    
+   // window.resolveLocalFileSystemURL(cordova.file.externalRootDirectory, gotFS, fail); //uncoment to make log work on android
+    logcallback(); //comment after uncoment previous line to make log work
 
     function gotFS(trySystem) {
         trySystem.getDirectory("MedzmateLogs", { create: true }, gotFloder);
