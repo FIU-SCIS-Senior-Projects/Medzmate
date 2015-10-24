@@ -1,4 +1,5 @@
 #include <ctime>
+#include <stdio.h>
 
 class DispenserConfiguration
 {
@@ -10,12 +11,19 @@ public:
 	char DoctorsLastName[32];
 	int Quantity;
 	tm ExpirationDate;
-	double MedicineMass;
-	int DossageFrequency;
-	bool FrequencyInHours; // Hours or Minutes
+	int MedicineMass;
+	int DossageNumber;
+	bool Monday;
+	bool Tuesday;
+	bool Wednesday;
+	bool Thursday;
+	bool Friday;
+	bool Saturday;
+	bool Sunday;
 	tm DispensingTimes [24];
-	int Containers [8];
 	char Symptoms[512];
 	char SideEffects[512];
+	char StrawId [1];
+	void Print();
 };
 

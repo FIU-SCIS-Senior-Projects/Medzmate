@@ -1,18 +1,18 @@
 #include <iostream>
-#include "MedzmateConfiguration.h"
+#include "Serializer.h"
 
-[event_source(native)]
-public class SchedulerProcess
+//[event_source(native)]
+class SchedulerProcess
 {
 	MedzmateConfiguration _configuration;
 	bool IsTime(DispenserConfiguration dc);
 public:
 	SchedulerProcess(MedzmateConfiguration configuration);
 	void Run();
-	__event void Signal(DispenserConfiguration dc);
+	void Signal(DispenserConfiguration dc);
 };
 
-[event_receiver(native)]
+//[event_receiver(native)]
 class ActionHandler
 {
 public:

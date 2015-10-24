@@ -3,7 +3,7 @@
 
 #define DISPCONFIGS 8
 
-public class MedzmateConfiguration
+class MedzmateConfiguration
 {
 	
 public:

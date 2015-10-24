@@ -1,0 +1,7 @@
+*****COMPILATION
+make
+*****USE //// Remember path is always relative to the execution location thats why ../../Desktop
+./MedzmateProcess  ../../Desktop/MedzmateDeployment/Straw_D.json
+*****CLEAN UP
+make clean
+

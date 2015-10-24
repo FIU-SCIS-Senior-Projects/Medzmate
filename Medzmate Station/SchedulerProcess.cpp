@@ -1,17 +1,18 @@
-#include "stdafx.h"
 #include "SchedulerProcess.h"
-#include <ctime>
+#include <time.h>
 
 
 bool SchedulerProcess::IsTime(DispenserConfiguration dc)
 {
-	tm _tm;
+	time_t currentTime;	
+	struct tm *_tm;
 	int i;
-	_sleep(1000);
-	_getsystime(&_tm);
+	sleep(900);
+	time(&currentTime);
+	_tm = localtime(&currentTime);
 	for (i = 0; i < 24; i++)
 	{
-		if (dc.DispensingTimes[i].tm_hour == _tm.tm_hour)
+		if (dc.DispensingTimes[i].tm_hour == _tm->tm_hour)
 			return true;
 	}
 	return false;
@@ -36,6 +37,9 @@ void SchedulerProcess::Run()
 	}
 }
 
+void SchedulerProcess::Signal(DispenserConfiguration dc){
+}
+
 void ActionHandler::Handler(DispenserConfiguration dc)
 {
 	char input[256];
@@ -50,12 +54,12 @@ void ActionHandler::LightBlinks(DispenserConfiguration dc)
 
 void ActionHandler::hookEvent(SchedulerProcess * source)
 {
-	__hook(&SchedulerProcess::Signal, source, &ActionHandler::Handler);
-	__hook(&SchedulerProcess::Signal, source, &ActionHandler::LightBlinks);
+	//__hook(&SchedulerProcess::Signal, source, &ActionHandler::Handler);
+	//__hook(&SchedulerProcess::Signal, source, &ActionHandler::LightBlinks);
 }
 
 void ActionHandler::unhookEvent(SchedulerProcess * source)
 {
-	__unhook(&SchedulerProcess::Signal, source, &ActionHandler::Handler);
-	__unhook(&SchedulerProcess::Signal, source, &ActionHandler::LightBlinks);
+	//__unhook(&SchedulerProcess::Signal, source, &ActionHandler::Handler);
+	//__unhook(&SchedulerProcess::Signal, source, &ActionHandler::LightBlinks);
 }
