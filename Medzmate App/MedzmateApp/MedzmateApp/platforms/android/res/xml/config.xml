@@ -1,10 +1,18 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget android-versionCode="1" defaultlocale="en-US" id="io.cordova.myappb0ef14" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps">
     <preference name="loglevel" value="DEBUG" />
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="FileTransfer">
+        <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
+    </feature>
     <feature name="Whitelist">
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
+    <preference name="AndroidPersistentFileLocation" value="Internal" />
     <allow-intent href="market:*" />
     <icon density="ldpi" src="res/icons/android/icon-36-ldpi.png" />
     <icon density="mdpi" src="res/icons/android/icon-48-mdpi.png" />
@@ -32,5 +40,8 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <preference name="Fullscreen" value="True" />
+    <preference name="Fullscreen" value="False" />
+    <vs:plugin name="cordova-plugin-file" version="3.0.0" />
+    <vs:plugin name="cordova-plugin-file-transfer" version="1.3.0" />
+    <vs:plugin name="cordova-plugin-whitelist" version="1.0.0" />
 </widget>
