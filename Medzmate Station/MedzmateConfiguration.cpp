@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "MedzmateConfiguration.h"
 #include <string.h>
 #include <stdio.h>
