@@ -37,5 +37,5 @@ Lexer.o : Lexer.h Lexer.cpp
 	$(CC) $(CFLAGS) Lexer.cpp
 
 clean:
-	rm -f MedzmateProcess *.o *~ core
+	rm -f MedzmateProcess LexerTests *.o *~ core
     
