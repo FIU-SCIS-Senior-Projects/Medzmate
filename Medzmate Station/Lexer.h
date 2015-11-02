@@ -17,7 +17,7 @@ public:
 	Token Next();
 	Token Peek();
 	Token Get();
-	void Match(char* match);
+	void Match(string match);
 	void Close();
 };
 

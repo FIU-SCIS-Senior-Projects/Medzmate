@@ -7,7 +7,7 @@ bool SchedulerProcess::IsTime(DispenserConfiguration dc)
 	time_t currentTime;	
 	struct tm *_tm;
 	int i;
-	sleep(900);
+
 	time(&currentTime);
 	_tm = localtime(&currentTime);
 	for (i = 0; i < 24; i++)
