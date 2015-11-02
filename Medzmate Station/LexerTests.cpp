@@ -19,7 +19,7 @@ void TestMatch(Lexer _lexer){
 }
 
 int main(int argc, char **argv) {
-    
+    cout << "Starting Lexer Tests ...\n";    
     // initialize
     Lexer _lexer = Lexer("LexerTest.json");
     // Next();
@@ -32,4 +32,5 @@ int main(int argc, char **argv) {
     TestMatch(_lexer);
     // release resources
     _lexer.Close();
+    cout << "Completing Lexer Tests ...\n"; 
 }
