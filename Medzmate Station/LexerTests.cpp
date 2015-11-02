@@ -20,12 +20,16 @@ void TestMatch(Lexer _lexer){
 
 int main(int argc, char **argv) {
     
-    // init
+    // initialize
     Lexer _lexer = Lexer("LexerTest.json");
     // Next();
+    TestNext(_lexer);
     // Peek();
+    TestPeek(_lexer);
     // Get();
+    TestPeek(_lexer);
     // Match();
+    TestMatch(_lexer);
     // release resources
     _lexer.Close();
 }
