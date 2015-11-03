@@ -18,7 +18,7 @@
             var medzMateId = document.getElementById("station").value;
             if (medzMateId !="")
                 if (validateLogin()) {
-                    writeTolog("MedzMate_General_log"+".txt", "User Loged in", function callback(test) { window.location = "loadingDeckSelector.html"; })
+                    writeTolog("MedzMate_General_log"+".txt", "User Loged in", function callback(test) { window.location = "main.html"; })
                 }
                 else {
                     alert("Invalid Username and/or Password \n Please try again");
