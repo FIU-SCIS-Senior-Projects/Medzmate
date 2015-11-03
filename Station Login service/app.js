@@ -25,13 +25,19 @@ http.createServer(function (req, res) {
 	    }
 	    else if (req.url == "/saveStraw")
 	    {
-	    	writeToFile(post.fileName, post.strawSch);
-	    	console.log("esta es t");
+	    	writeToFile(post.fileName, post.strawSch);	    	
+	    	console.log("Starting Medzmate Process ..."); 
+	    	var exec = require('child_process').exec;
+	    	var cmd =  './MedzmateProcess Documents/' + post.fileName;
+	    	exec(cmd, function(error, stdout, stderr){
+					console.log(stdout); 
+	    	});
+	    	res.end('Posted Successfully');
 	    }   
     
     	//res.writeHead(200, { 'Content-Type': 'text/plain' });
     	
-    	console.log('POSTed: ' , body);
+    	//console.log('POSTed: ' , body);
     	
 
     })

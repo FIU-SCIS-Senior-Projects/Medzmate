@@ -27,11 +27,13 @@ int main(int argc, char **argv) {
     _tm = localtime(&currentTime);
 
     // display time
+    cout << "Hello from MedzmateProcess\n";
     printf("Time: %d:%d \n", _tm->tm_hour, _tm->tm_min);
 
     DispenserConfiguration med1 = serializer.DeserializeFromJsonDispenserConfiguration(straw);
     med1.DispensingTimes[0] = *_tm;
     med1.Print();
+    
 
     /*DispenserConfiguration med2 = serializer.DeserializeFromJsonDispenserConfiguration(straw);
     med2.DispensingTimes[0] = *_tm;
@@ -41,11 +43,11 @@ int main(int argc, char **argv) {
     med3.DispensingTimes[0] = *_tm;
     med3.Print();*/
     // Initialize with test values
-    DispenserConfiguration dispenserConfigs[2] = {
+   /* DispenserConfiguration dispenserConfigs[1] = {
         med1
     };
     MedzmateConfiguration config("2342342323", dispenserConfigs);
-    sleep(2000);
+    sleep(2000);*/
     // Test Data
     /*SchedulerProcess schedduler(config);
     eventHandler.hookEvent(&schedduler);
