@@ -74,8 +74,10 @@ void Lexer::Match(string match)
 {
 	for (int i = 0; match[i] != '\0'; i++) {	
 		Token t = Next();
-		if (match[i] != t.value)
-			printf("Lexer Error Matching");
+		if (match[i] != t.value){
+			cout << "Lexer Error Matching " << match[i] << " with " << t.value << "\n";
+                        return;
+                }
 	}
 }
 
