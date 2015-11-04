@@ -4,7 +4,13 @@ DEBUG = -g
 CFLAGS = -c $(DEBUG)
 LFLAGS = $(DEBUG)
 
-all: MedzmateProcess
+all: MedzmateProcess LexerTests
+	
+LexerTests: LexerTests.o Lexer.o
+	$(CC) $(LFLAGS) LexerTests.o Lexer.o -o LexerTests
+	
+LexerTests.o: LexerTests.cpp Lexer.h
+	$(CC) $(CFLAGS) LexerTests.cpp
 
 MedzmateProcess : $(OBJS)
 	$(CC) $(LFLAGS) $(OBJS) -o MedzmateProcess
@@ -31,5 +37,5 @@ Lexer.o : Lexer.h Lexer.cpp
 	$(CC) $(CFLAGS) Lexer.cpp
 
 clean:
-	rm -f MedzmateProcess *.o *~ core
+	rm -f MedzmateProcess LexerTests *.o *~ core
     

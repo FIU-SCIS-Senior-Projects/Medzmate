@@ -70,7 +70,7 @@ Token Lexer::Peek()
 return Token();
 }
 
-void Lexer::Match(char* match)
+void Lexer::Match(string match)
 {
 	for (int i = 0; match[i] != '\0'; i++) {	
 		Token t = Next();
