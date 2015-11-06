@@ -181,6 +181,7 @@
     "res\\screens\\android\\screen-ldpi-portrait.png",
     "plugins\\cordova-plugin-file-transfer\\www\\firefoxos\\FileTransferProxy.js",
     "plugins\\cordova-plugin-file\\src\\blackberry10\\index.js",
+    "www\\scripts\\navigator.js",
     "plugins\\cordova-plugin-whitelist\\package.json",
     "plugins\\cordova-plugin-whitelist\\CONTRIBUTING.md",
     "plugins\\cordova-plugin-file\\src\\android\\LocalFilesystem.java",
@@ -285,7 +286,7 @@
     "res\\screens\\android\\screen-mdpi-portrait.png",
     "www\\scripts\\formProcesor.js",
     "www\\css\\images\\ui-bg_flat_0_aaaaaa_40x100.png",
-    "www\\patientinfo.html"
+    "www\\scripts\\patientInfo.js"
   ],
   "deletedFilesIos": [],
   "addedPluginsIos": [
@@ -476,6 +477,7 @@
     "res\\screens\\android\\screen-ldpi-portrait.png",
     "plugins\\cordova-plugin-file-transfer\\www\\firefoxos\\FileTransferProxy.js",
     "plugins\\cordova-plugin-file\\src\\blackberry10\\index.js",
+    "www\\scripts\\navigator.js",
     "plugins\\cordova-plugin-whitelist\\package.json",
     "plugins\\cordova-plugin-whitelist\\CONTRIBUTING.md",
     "plugins\\cordova-plugin-file\\src\\android\\LocalFilesystem.java",
@@ -580,7 +582,7 @@
     "res\\screens\\android\\screen-mdpi-portrait.png",
     "www\\scripts\\formProcesor.js",
     "www\\css\\images\\ui-bg_flat_0_aaaaaa_40x100.png",
-    "www\\patientinfo.html"
+    "www\\scripts\\patientInfo.js"
   ],
   "deletedFiles": [],
   "addedPlugins": [
