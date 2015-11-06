@@ -1,4 +1,5 @@
-﻿function saveDataToFile(ID, jsonData) {
+﻿function saveDataToFile(ID, jsonData) 
+{
     window.localStorage.setItem(ID, jsonData);
 }
 
