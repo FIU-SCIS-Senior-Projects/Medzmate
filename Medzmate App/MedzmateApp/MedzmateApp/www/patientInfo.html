@@ -13,6 +13,8 @@
     <!-- MedzmateApp references -->
     <link href="css/formStyle.css" rel="stylesheet" />
     <script src="scripts/navigator.js"></script>
+    <script type="text/javascript" src="scripts/logCreator.js"></script>
+    <script src="scripts/patientInfo.js"></script>
 
     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
      <script src="scripts/jquery-1.11.1.min.js"></script>
@@ -129,7 +131,22 @@
                     <input id="cancelForm" class="button_text" type="button" data-inline="true" name="cancel" data-theme="b" data-icon="check" value="Take me out" data-rel="dialog" onclick="navigateToMain()" />
                 </div>
             </div>
+            <div data-role="popup" id="confirmDialog" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
+                <div data-role="header" data-theme="a" class="ui-corner-top">
+                    <h1>Submit Page?</h1>
+                </div>
+                <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
+                    <h3 class="ui-title">Is this infromation correct?</h3>
+                    <p id="eldato"></p>
+                    <p><b>By clicking "Submit" you confirm that you have read the information in this page and you want to submit it to the medzmate station.</b></p>
+                    <a href="#" data-role="button" data-inline="true" data-rel="back" data-icon="delete" data-theme="a">Stay in the form</a>
+                    <input id="submitForm" class="button_text" type="button" data-inline="true" name="submit" data-theme="b" data-icon="check" value="Submit" data-rel="dialog" onclick="onSubmitClick()" />
+                </div>
+            </div>
 </form>
     </div>
+    <script>
+        initialize();
+    </script>
 </body>
 </html>
