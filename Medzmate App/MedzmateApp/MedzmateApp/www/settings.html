@@ -1,9 +1,140 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <!-- Basic Page Needs
+       ================================================== -->
+    <meta charset="utf-8">
+    <title>Patient Information</title>
+    <!--Prevent zooming of the app-->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <!-- Enable all requests, inline styles, and eval() -->
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+
+    <!-- MedzmateApp references -->
+    <script src="scripts/navigator.js"></script>
+    <script type="text/javascript" src="scripts/logCreator.js"></script>
+    <script src="scripts/patientInfo.js"></script>
+
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <script src="scripts/jquery-1.11.1.min.js"></script>
+    <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
+
+    <!-- Cordova reference, this is added to your app when it's built. -->
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+    <script src="cordova_plugins.js"></script>
 </head>
-<body>
-    <div>Setings Content goes here.</div>
+<body id="main_body">
+    <img id="top" src="images/top.png" alt="">
+    <div id="form_container">
+        <form id="Medzmate-Settings" class="medicineDetails" method="post" action="">
+            <div class="form_description">
+                <h2>Medzmate Settings</h2>
+                <p>Please enter the station configuration </p>
+            </div>
+            <ul>
+                <li id="li_2">
+                    <label class="description" for="alarmType">Enable Alarms of type: </label>
+                    <span>
+                        <label><input type="checkbox" name="alarmType" /> Light </label>
+                    </span>
+                </li>
+                <li id="li_3">
+                    <label class="description" for="Sound_Type">Sound Type</label>                    
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <input type="radio" name="Sound_Type" id="radio-choice-21" value="Default" checked="checked" />
+                            <label for="radio-choice-21">Default</label>
+                            <input type="radio" name="Sound_Type" id="radio-choice-22" value="Costumized" />
+                            <label for="radio-choice-22">Costumized</label>
+                        </fieldset>                    
+                </li>
+                <li id="li_4">
+                    <label class="description" for="Time_Before">Time before schedule time</label>
+                    <span>
+                        <select class="element select small" id="Time_Before" name="Time_Before" data-native-menu="false">
+                            <option value="1" selected>5 mins</option>
+                            <option value="2">10 mins</option>
+                            <option value="3">15 mins</option>
+                        </select>
+                    </span>
+                </li>
+            </ul>
+            <div class="form_description">
+            </div>
+            <ul>
+                <li id="li_5">
+                    <label class="description" for="Time_after">Time after schedule time</label>
+                    <span>
+                        <select class="element select small" id="Time_after" name="Time_after" data-native-menu="false">
+                            <option value="1" selected>5 mins</option>
+                            <option value="2">10 mins</option>
+                            <option value="3">15 mins</option>
+                            <option value="3">No Limit</option>
+                        </select>
+                    </span>
+                </li>
+            </ul>
+            <div class="form_description">
+                <label class="description" for="primary_contact">Primary Contact </label>
+            </div>
+            <ul>
+                <li id="li_6">
+                    <label class="description" for="CarePro_Name">Name </label>
+                    <span>
+                        <input id="CarePros_Name_1" name="CarePro_First_Name" class="element text" maxlength="255" size="8" placeholder="First" />
+                    </span>
+                    <span>
+                        <input id="CarePro_Name_2" name="CarePro_Last_Name" class="element text" maxlength="255" size="14" placeholder="Last" />
+                    </span>
+                </li>
+                <li id="li_7">
+                    <label class="description" for="CarePhone">Phone Number</label>
+                    <span>
+                        <input id="CarePhone" type="text" name="CarePhone" placeholder="...-......." />
+                    </span>
+                </li>
+                <li id="li_8">
+                    <label class="description" for="CareEmail">Email</label>
+                    <span>
+                        <input id="CareEmail" type="email" name="CareEmail" placeholder="malito@medzmate.com" />
+                    </span>
+                </li>
+            </ul>
+            <div class="form_description">
+                <label class="description" for="primary_contact">Secondary Contact </label>
+            </div>
+            <ul>
+                <li id="li_9">
+                    <label class="description" for="CarePro_Name">Name </label>
+                    <span>
+                        <input id="CarePros_Name_1" name="CarePro_First_Name" class="element text" maxlength="255" size="8" placeholder="First" />
+                    </span>
+                    <span>
+                        <input id="CarePro_Name_2" name="CarePro_Last_Name" class="element text" maxlength="255" size="14" placeholder="Last" />
+                    </span>
+                </li>
+                <li id="li_10">
+                    <label class="description" for="CarePhone">Phone Number</label>
+                    <span>
+                        <input id="CarePhone" type="text" name="CarePhone" placeholder="...-......." />
+                    </span>
+                </li>
+                <li id="li_11">
+                    <label class="description" for="CareEmail">Email</label>
+                    <span>
+                        <input id="CareEmail" type="email" name="CareEmail" placeholder="malito@medzmate.com" />
+                    </span>
+                </li>
+            </ul>
+            <div class="form_description">
+            </div>
+            <ul>
+                <li class="buttons">
+                    <a href="#popupDialog" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-transition="pop" data-icon="delete">Cancel</a>
+                    <input id="saveForm" class="button_text" type="submit" data-inline="true" name="submit" data-theme="b" Check - data-icon="check" value="Submit" />
+                </li>
+            </ul>
+        </form>
+    </div>
 </body>
 </html>
