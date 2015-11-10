@@ -157,6 +157,7 @@
     "res\\icons\\ios\\icon-small.png",
     "plugins\\cordova-plugin-file\\www\\blackberry10\\FileSystem.js",
     "plugins\\cordova-plugin-file-transfer\\src\\windows\\FileTransferProxy.js",
+    "www\\scripts\\patientInfo.js",
     "www\\css\\loadingDeckSelector.css",
     "res\\icons\\windows\\Square30x30Logo.scale-100.png",
     "plugins\\cordova-plugin-file\\src\\android\\InvalidModificationException.java",
@@ -285,8 +286,7 @@
     "www\\settings.html",
     "res\\screens\\android\\screen-mdpi-portrait.png",
     "www\\scripts\\formProcesor.js",
-    "www\\css\\images\\ui-bg_flat_0_aaaaaa_40x100.png",
-    "www\\scripts\\patientInfo.js"
+    "www\\css\\images\\ui-bg_flat_0_aaaaaa_40x100.png"
   ],
   "deletedFilesIos": [],
   "addedPluginsIos": [
@@ -453,6 +453,7 @@
     "res\\icons\\ios\\icon-small.png",
     "plugins\\cordova-plugin-file\\www\\blackberry10\\FileSystem.js",
     "plugins\\cordova-plugin-file-transfer\\src\\windows\\FileTransferProxy.js",
+    "www\\scripts\\patientInfo.js",
     "www\\css\\loadingDeckSelector.css",
     "res\\icons\\windows\\Square30x30Logo.scale-100.png",
     "plugins\\cordova-plugin-file\\src\\android\\InvalidModificationException.java",
@@ -581,8 +582,7 @@
     "www\\settings.html",
     "res\\screens\\android\\screen-mdpi-portrait.png",
     "www\\scripts\\formProcesor.js",
-    "www\\css\\images\\ui-bg_flat_0_aaaaaa_40x100.png",
-    "www\\scripts\\patientInfo.js"
+    "www\\css\\images\\ui-bg_flat_0_aaaaaa_40x100.png"
   ],
   "deletedFiles": [],
   "addedPlugins": [
