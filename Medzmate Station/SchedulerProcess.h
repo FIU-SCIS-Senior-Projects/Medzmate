@@ -1,24 +1,40 @@
-#include <iostream>
 #include "Serializer.h"
 
-//[event_source(native)]
-class SchedulerProcess
-{
-	MedzmateConfiguration _configuration;
-	bool IsTime(DispenserConfiguration dc);
+class Subject;
+class SchedulerProcess;
+
+class Observer {
 public:
-	SchedulerProcess(MedzmateConfiguration configuration);
-	void Run();
-	void Signal(DispenserConfiguration dc);
+
+    virtual ~Observer();
+    virtual void Update(SchedulerProcess process) = 0;
+
+protected:
+    Observer();
 };
 
-//[event_receiver(native)]
-class ActionHandler
-{
+class Subject {
 public:
-	void Handler(DispenserConfiguration dc);
-	void LightBlinks(DispenserConfiguration dc);
-	void hookEvent(SchedulerProcess* source);
-	void unhookEvent(SchedulerProcess* source);
+
+    //virtual ~Subject();
+    virtual void Attach(Observer*);
+    virtual void Detach(Observer*);
+    virtual void Notify();
+
+private:
+    list<Observer*> *_observers;
+};
+
+
+class SchedulerProcess: public Subject {
+
+private:    
+    MedzmateConfiguration _configuration;
+    bool IsTime(DispenserConfiguration dc);
+public:
+    ~SchedulerProcess();
+    SchedulerProcess(MedzmateConfiguration configuration);
+    /*void Run();*/
+    void Signal(DispenserConfiguration dc);
 };
 

@@ -15,8 +15,6 @@ int main(int argc, char **argv) {
         strcpy(straw, "Straw_D.json");
     }
 
-    ActionHandler eventHandler;
-
     Serializer serializer = Serializer();
 
     //const char* ibuprofen("ibuprofen.json");
