@@ -6,6 +6,7 @@
 function sendToStation(ID, jsonData) {
     var medzMateId = window.localStorage.getItem("currentStation");
     var fName = ID + ".json"
+   // alert(jsonData);
     $.ajax({
         url: "http://" + medzMateId + ":3080/savePatient",
         // dataType: "jsonp"
