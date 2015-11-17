@@ -179,6 +179,7 @@
     "www\\main.html",
     "www\\scripts\\securityHandler.js",
     "res\\icons\\ios\\icon-60-2x.png",
+    "www\\scripts\\settings.js",
     "res\\screens\\android\\screen-ldpi-portrait.png",
     "plugins\\cordova-plugin-file-transfer\\www\\firefoxos\\FileTransferProxy.js",
     "plugins\\cordova-plugin-file\\src\\blackberry10\\index.js",
@@ -286,8 +287,7 @@
     "www\\settings.html",
     "res\\screens\\android\\screen-mdpi-portrait.png",
     "www\\scripts\\formProcesor.js",
-    "www\\css\\images\\ui-bg_flat_0_aaaaaa_40x100.png",
-    "www\\scripts\\settings.js"
+    "www\\css\\images\\ui-bg_flat_0_aaaaaa_40x100.png"
   ],
   "deletedFilesIos": [],
   "addedPluginsIos": [
@@ -296,10 +296,7 @@
     "cordova-plugin-whitelist@1.0.0"
   ],
   "deletedPluginsIos": [],
-  "changedFiles": [
-    "www\\scripts\\settings.js",
-    "www\\settings.html"
-  ],
+  "changedFiles": [],
   "deletedFiles": [],
   "addedPlugins": [],
   "deletedPlugins": []
