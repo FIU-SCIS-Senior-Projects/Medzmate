@@ -1,10 +1,10 @@
-#include "SchedulerProcess.h"
 
-class AlertsManager : public Observer {
+
+class AlertsManager {
+private:
+    
 public:
 
+    AlertsManager();
     virtual ~AlertsManager();
-    AlertsManager(SchedulerProcess*);
-    // overrides Observer peration
-    virtual void Update(Subject*);
 };

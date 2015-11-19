@@ -1,4 +1,4 @@
-OBJS = MedzmateProcess.o SchedulerProcess.o Serializer.o MedzmateConfiguration.o DispenserConfiguration.o Parser.o Lexer.o
+OBJS = MedzmateProcess.o SchedulerProcess.o Serializer.o MedzmateConfiguration.o DispenserConfiguration.o Parser.o Lexer.o AlertsManager.o
 CC = g++
 DEBUG = -g
 CFLAGS = -c $(DEBUG)
@@ -26,6 +26,9 @@ MedzmateProcess.o : SchedulerProcess.h MedzmateProcess.cpp
 
 SchedulerProcess.o : SchedulerProcess.h SchedulerProcess.cpp Serializer.h
 	$(CC) $(CFLAGS) SchedulerProcess.cpp
+	
+AlertsManager.o : AlertsManager.h AlertsManager.cpp SchedulerProcess.h
+	$(CC) $(CFLAGS) AlertsManager.cpp
 
 Serializer.o : Serializer.h Serializer.cpp MedzmateConfiguration.h Parser.h
 	$(CC) $(CFLAGS) Serializer.cpp

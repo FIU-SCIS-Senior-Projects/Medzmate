@@ -1,6 +1,11 @@
 #include "AlertsManager.h"
+#include <iostream>
 
 
-AlertsManager::AlertsManager(SchedulerProcess* process){
-    process->Attach(this);
+AlertsManager::AlertsManager() {
+    
+}
+
+AlertsManager::~AlertsManager() {
+    
 }
