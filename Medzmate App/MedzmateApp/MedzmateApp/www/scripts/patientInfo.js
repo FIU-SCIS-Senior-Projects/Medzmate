@@ -78,6 +78,11 @@ function initialize() {
     }
     );
 
-   // populate(thisForm, strawID);
+    document.addEventListener("backbutton", onBackKeyDown, false);
+    function onBackKeyDown(e) {
+        console.log("backbutton pressed")
+        e.preventDefault();
+        document.getElementById('cancleBtn').click()
+    }
 
 }

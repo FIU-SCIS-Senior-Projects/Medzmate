@@ -7,7 +7,7 @@ body {
 }
 
 h1 {
-	font-size:55px;
+	font-size:52px;
 }
 
 .loadingDeck {
@@ -23,7 +23,7 @@ h1 {
     background-repeat: no-repeat;
     background-position: 85% 50%;
     padding-right: 30%;
-    height:230px;
+    height:220px;
     background-size: 20%;
 }
 
@@ -40,7 +40,7 @@ h1 {
     background-repeat: no-repeat;
     background-position: 85% 50%;
     padding-right: 30%;    
-    height:230px;
+    height:220px;
     background-size: 20%;
 }
 
@@ -57,7 +57,7 @@ h1 {
     background-repeat: no-repeat;
     background-position: 90% 50%;
     padding-right: 30%;
-    height:230px;
+    height:220px;
     background-size: 20%;
 }
 
