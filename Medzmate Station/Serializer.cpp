@@ -1,4 +1,6 @@
 #include "Serializer.h"
+#include "MedzmateConfiguration.h"
+#include "Parser.h"
 
 
 void Serializer::ResolveDispenserConfiguration(string name, string value, DispenserConfiguration& dispenser_config)
@@ -57,12 +59,12 @@ Serializer::Serializer()
 {
 }
 
-DispenserConfiguration Serializer::DeserializeFromJsonDispenserConfiguration(const char * file_name)
+DispenserConfiguration Serializer::DeserializeFromJsonDispenserConfiguration(string file_name)
 {
 	// create dispenser configuration
 	DispenserConfiguration dispenser_config = DispenserConfiguration();
 	Parser parser = Parser(file_name);
-	printf("Deserializing file %s...\n", file_name);
+        std::cout << "De-serialization of file " << file_name << " started ...\n";
 	list<NameValuePair> properties = parser.Start();
 	for (list<NameValuePair>::iterator it = properties.begin(); it != properties.end(); it++){
 		ResolveDispenserConfiguration(it->name, it->value, dispenser_config);
