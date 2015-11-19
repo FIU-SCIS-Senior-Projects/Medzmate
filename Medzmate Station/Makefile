@@ -21,16 +21,16 @@ ParserTests.o: ParserTests.cpp Parser.h
 MedzmateProcess : $(OBJS)
 	$(CC) $(LFLAGS) $(OBJS) -o MedzmateProcess
 
-MedzmateProcess.o : SchedulerProcess.h MedzmateProcess.cpp
+MedzmateProcess.o : SchedulerProcess.h Serializer.h DispenserConfiguration.h MedzmateConfiguration.h MedzmateProcess.cpp
 	$(CC) $(CFLAGS) MedzmateProcess.cpp
 
-SchedulerProcess.o : SchedulerProcess.h SchedulerProcess.cpp Serializer.h
+SchedulerProcess.o : SchedulerProcess.h SchedulerProcess.cpp MedzmateConfiguration.h DispenserConfiguration.h AlertsManager.h
 	$(CC) $(CFLAGS) SchedulerProcess.cpp
 	
-AlertsManager.o : AlertsManager.h AlertsManager.cpp SchedulerProcess.h
+AlertsManager.o : AlertsManager.h AlertsManager.cpp
 	$(CC) $(CFLAGS) AlertsManager.cpp
 
-Serializer.o : Serializer.h Serializer.cpp MedzmateConfiguration.h Parser.h
+Serializer.o : Serializer.h Serializer.cpp MedzmateConfiguration.h DispenserConfiguration.h Parser.h
 	$(CC) $(CFLAGS) Serializer.cpp
 
 MedzmateConfiguration.o : MedzmateConfiguration.h MedzmateConfiguration.cpp DispenserConfiguration.h
