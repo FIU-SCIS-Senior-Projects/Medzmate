@@ -13,8 +13,6 @@ DispenserConfiguration::DispenserConfiguration(char medicineName[32])
 
 void DispenserConfiguration::Print()
 {
-
-
 	printf("********************************\n");
 	printf("Doctors Name: %s \n", DoctorsName);
 	printf("Doctors Last Name: %s \n", DoctorsLastName);
