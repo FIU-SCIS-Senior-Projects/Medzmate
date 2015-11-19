@@ -1,9 +1,12 @@
-#include "MedzmateConfiguration.h"
-#include "AlertsManager.h"
+
+
+class MedzmateConfiguration;
+class DispenserConfiguration;
+class AlertsManager;
 
 class SchedulerProcess {
 private:
-    MedzmateConfiguration _configuration;
+    
     bool IsTime(DispenserConfiguration dc);
 public:
 

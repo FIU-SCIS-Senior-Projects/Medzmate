@@ -1,4 +1,7 @@
 #include "SchedulerProcess.h"
+#include "MedzmateConfiguration.h"
+#include "DispenserConfiguration.h"
+#include "AlertsManager.h"
 #include <time.h>
 
 SchedulerProcess::SchedulerProcess(MedzmateConfiguration* configuration, AlertsManager* alertManager)
@@ -26,7 +29,7 @@ bool SchedulerProcess::IsTime(DispenserConfiguration dc) {
 }
 
 void SchedulerProcess::Run() {
-    DispenserConfiguration *dispenserConfigs = _configuration.DispenserConfigurations;
+   /* DispenserConfiguration *dispenserConfigs = _configuration.DispenserConfigurations;
     // run the process
     while (true) {
         int i;
@@ -34,5 +37,5 @@ void SchedulerProcess::Run() {
             if (IsTime(dispenserConfigs[i]))
                 Signal(dispenserConfigs[i]);
         }
-    }
+    }*/
 }
