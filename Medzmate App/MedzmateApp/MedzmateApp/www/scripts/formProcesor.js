@@ -1,8 +1,4 @@
-﻿function navigateToLoadingDeck() {
-    window.location = "loadingDeckSelector.html";
-}
-
-function populate(frm, id) {
+﻿function populate(frm, id) {
     //populate data from saved file
     var jobj = window.localStorage.getItem(id);
     if (jobj != null) {
@@ -87,6 +83,7 @@ document.addEventListener("backbutton", onBackKeyDown, false);
 function onBackKeyDown(e) {
     console.log("backbutton pressed")
     e.preventDefault();
+    document.getElementById('cancelBtn').click();
 }
 
 function initialize() {
