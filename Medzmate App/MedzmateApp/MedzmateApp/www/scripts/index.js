@@ -37,6 +37,7 @@
     function onBackKeyDown(e) {
         console.log("backbutton pressed")
         e.preventDefault();
+        navigator.app.exitApp();
     }
 
     function onPause() {
