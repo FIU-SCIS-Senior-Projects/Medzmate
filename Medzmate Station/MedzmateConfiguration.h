@@ -1,4 +1,7 @@
 #include <string>
+#include <list>
+
+using namespace std;
 
 
 #define DISPCONFIGS 8
@@ -6,9 +9,10 @@
 class DispenserConfiguration;
 
 class MedzmateConfiguration {
+
 public:
     MedzmateConfiguration();
-    MedzmateConfiguration(std::string serialNumber, DispenserConfiguration configurations []);
+    MedzmateConfiguration(std::string serialNumber);
     bool Light_Alarm;
     std::string Sound_Type;
     int Time_Before;

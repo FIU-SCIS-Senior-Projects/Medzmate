@@ -4,12 +4,8 @@
 #include <stdio.h>
 #include <iostream>
 
-MedzmateConfiguration::MedzmateConfiguration(std::string serialNumber, DispenserConfiguration configurations []) {
-    // coy the configurations
-    int i;
-    for (i = 0; i < DISPCONFIGS; i++) {
-        //DispenserConfigurations[i] = DispenserConfiguration(configurations[i]);
-    }
+MedzmateConfiguration::MedzmateConfiguration(std::string serialNumber) {
+
 }
 
 MedzmateConfiguration::MedzmateConfiguration() {
@@ -34,4 +30,5 @@ void MedzmateConfiguration::Print() {
     std::cout << "---Secondary Contact Last Name: " << Secondary_Contact_Last_Name << "\n";
     std::cout << "---Secondary Contact Email: " << Secondary_Contact_Email << "\n";
     std::cout << "---Care Phone: " << Care_Phone << "\n";
+    std::cout << "\n";
 }
