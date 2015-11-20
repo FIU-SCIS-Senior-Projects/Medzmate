@@ -1,4 +1,6 @@
+#include <list>
 
+using namespace std;
 
 class MedzmateConfiguration;
 class DispenserConfiguration;
@@ -6,12 +8,14 @@ class AlertsManager;
 
 class SchedulerProcess {
 private:
-    
-    bool IsTime(DispenserConfiguration dc);
+    list<DispenserConfiguration> _dispenser_configs;
+    MedzmateConfiguration* _medzmate_config;
+    AlertsManager* _alertManager;
+    bool IsTime(list<DispenserConfiguration>::iterator dc);
 public:
 
-    SchedulerProcess(MedzmateConfiguration* configuration, AlertsManager* alertManager);
+    SchedulerProcess(MedzmateConfiguration* medzmate_config, list<DispenserConfiguration> dispenser_configs, AlertsManager* alertManager);
     void Run();
-    void Signal(DispenserConfiguration dc);
+    void Signal(list<DispenserConfiguration>::iterator dc);
 };
 

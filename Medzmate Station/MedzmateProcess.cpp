@@ -4,6 +4,7 @@
 #include "Serializer.h"
 #include "DispenserConfiguration.h"
 #include "MedzmateConfiguration.h"
+#include "AlertsManager.h"
 #include <iostream>
 #include <ctime>
 #include <string>
@@ -37,6 +38,10 @@ int main(int argc, char **argv) {
     _tm = localtime(&currentTime);
 
     std::cout << "Starting Medzmate Process...\n";
+    
+    list<DispenserConfiguration> disp_configs = list<DispenserConfiguration>();
+    
+    AlertsManager alert_mngr = AlertsManager();
 
     // read general configuration
     MedzmateConfiguration medz_config = serializer.DeserializeFromJsonMedzmateConfiguration("medzmate_config.json");
@@ -45,14 +50,23 @@ int main(int argc, char **argv) {
     DispenserConfiguration med1 = serializer.DeserializeFromJsonDispenserConfiguration(straw_a);
     med1.DispensingTimes[0] = *_tm;
     med1.Print();
+    
+    disp_configs.push_front(med1);
 
     DispenserConfiguration med2 = serializer.DeserializeFromJsonDispenserConfiguration(straw_b);
     med2.DispensingTimes[0] = *_tm;
     med2.Print();
     
+    disp_configs.push_front(med2);
+    
     DispenserConfiguration med3 = serializer.DeserializeFromJsonDispenserConfiguration(straw_c);
     med3.DispensingTimes[0] = *_tm;
     med3.Print();
+    
+    disp_configs.push_front(med3);
+    
+    SchedulerProcess scheduler = SchedulerProcess(&medz_config, disp_configs, &alert_mngr);
+    scheduler.Run();
 
     return 0;
 }
