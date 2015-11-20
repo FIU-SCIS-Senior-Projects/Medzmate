@@ -1,11 +1,11 @@
 [
   {
     "name": "alarmType_light",
-    "value": "on"
+    "value": "off"
   },
   {
     "name": "Sound_Type",
-    "value": "Default"
+    "value": "RingRing.mp3"
   },
   {
     "name": "Time_Before",

@@ -4,17 +4,25 @@
 #include "AlertsManager.h"
 #include <time.h>
 
-SchedulerProcess::SchedulerProcess(MedzmateConfiguration* configuration, AlertsManager* alertManager)
+SchedulerProcess::SchedulerProcess(MedzmateConfiguration* medzmate_config, list<DispenserConfiguration> dispenser_configs, AlertsManager* alertManager)
 {
-
+    _medzmate_config = medzmate_config;
+    _dispenser_configs = dispenser_configs;
+    _alertManager = alertManager;
 }
 
-void SchedulerProcess::Signal(DispenserConfiguration dc) {
+void SchedulerProcess::Signal(list<DispenserConfiguration>::iterator dc) {
 
-
+    sleep(2);
+    if(_medzmate_config->Light_Alarm){
+        _alertManager->Light_Alert();
+    }
+    if(!_medzmate_config->Sound_Type.empty()){
+        _alertManager->Sound_Alert(_medzmate_config->Sound_Type);
+    }
 }
 
-bool SchedulerProcess::IsTime(DispenserConfiguration dc) {
+bool SchedulerProcess::IsTime(list<DispenserConfiguration>::iterator dc) {
     time_t currentTime;
     struct tm *_tm;
     int i;
@@ -22,20 +30,19 @@ bool SchedulerProcess::IsTime(DispenserConfiguration dc) {
     time(&currentTime);
     _tm = localtime(&currentTime);
     for (i = 0; i < 24; i++) {
-        if (dc.DispensingTimes[i].tm_hour == _tm->tm_hour)
+        if (dc->DispensingTimes[i].tm_hour == _tm->tm_hour)
             return true;
     }
     return false;
 }
 
 void SchedulerProcess::Run() {
-   /* DispenserConfiguration *dispenserConfigs = _configuration.DispenserConfigurations;
+   
     // run the process
     while (true) {
-        int i;
-        for (i = 0; i < DISPCONFIGS; i++) {
-            if (IsTime(dispenserConfigs[i]))
-                Signal(dispenserConfigs[i]);
+        for (list<DispenserConfiguration>::iterator it = _dispenser_configs.begin(); it != _dispenser_configs.end(); it++) {
+            if (IsTime(it))
+                Signal(it);
         }
-    }*/
+    }
 }
