@@ -288,22 +288,16 @@
     "res\\screens\\android\\screen-mdpi-portrait.png",
     "www\\scripts\\formProcesor.js",
     "www\\css\\images\\ui-bg_flat_0_aaaaaa_40x100.png",
-    "www\\main.html~RF18349d95.TMP",
-    "www\\css\\main.css~RF18764e7d.TMP"
+    "www\\scripts\\formprocesor.js"
   ],
-  "deletedFilesIos": [
-    "www\\scripts\\index.js~RF181de9ff.TMP"
-  ],
+  "deletedFilesIos": [],
   "addedPluginsIos": [
     "cordova-plugin-file@3.0.0",
     "cordova-plugin-file-transfer@1.3.0",
     "cordova-plugin-whitelist@1.0.0"
   ],
   "deletedPluginsIos": [],
-  "changedFiles": [
-    "www\\css\\main.css",
-    "www\\css\\main.css~RF18764e7d.TMP"
-  ],
+  "changedFiles": [],
   "deletedFiles": [],
   "addedPlugins": [],
   "deletedPlugins": []
