@@ -8,6 +8,7 @@
 #include <iostream>
 #include <ctime>
 #include <string>
+#include <time.h>
 
 int main(int argc, char **argv) {
 
@@ -39,10 +40,12 @@ int main(int argc, char **argv) {
 
     std::cout << "Starting Medzmate Process...\n";
     
+    
     list<DispenserConfiguration> disp_configs = list<DispenserConfiguration>();
     
     AlertsManager alert_mngr = AlertsManager();
-
+    
+    usleep(2000000);
     // read general configuration
     MedzmateConfiguration medz_config = serializer.DeserializeFromJsonMedzmateConfiguration("medzmate_config.json");
     medz_config.Print();

@@ -13,7 +13,7 @@ SchedulerProcess::SchedulerProcess(MedzmateConfiguration* medzmate_config, list<
 
 void SchedulerProcess::Signal(list<DispenserConfiguration>::iterator dc) {
 
-    sleep(2);
+    usleep(2000000);
     if(_medzmate_config->Light_Alarm){
         _alertManager->Light_Alert();
     }
