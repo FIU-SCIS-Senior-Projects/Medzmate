@@ -16,7 +16,7 @@ int main(int argc, char **argv) {
         straw.assign(argv[1]);
     } else {
         // for debugging only
-        straw.assign("Straw_D.json");
+        straw.assign("Straw_B.json");
     }
 
     Serializer serializer = Serializer();
@@ -28,7 +28,7 @@ int main(int argc, char **argv) {
 
     // display time
     std::cout << "Hello from MedzmateProcess\n";
-    
+	sleep(5);
     MedzmateConfiguration medz_config = serializer.DeserializeFromJsonMedzmateConfiguration("medzmate_config.json");
     medz_config.Print();
 

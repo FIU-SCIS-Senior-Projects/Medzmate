@@ -28,7 +28,8 @@ http.createServer(function (req, res) {
 	    	writeToFile(post.fileName, post.strawSch);	    	
 	    	console.log("Starting Medzmate Process ..."); 
 	    	var exec = require('child_process').exec;
-	    	var cmd =  './MedzmateProcess Documents/' + post.fileName;
+	    	var cmd =  './MedzmateProcess ' + post.fileName;
+			console.log(cmd);
 	    	exec(cmd, function(error, stdout, stderr){
 					console.log(stdout); 
 	    	});
@@ -58,7 +59,7 @@ function validateLogin(res,user,pass){
 function writeToFile(fileName, data)
 {
 	var fs = require('fs');
-	fs.writeFile(path.join(__dirname,"Documents/"+fileName), data, function(err) {
+	fs.writeFile(path.join(__dirname,fileName), data, function(err) {
 	    if(err) {
 	    	console.log(__dirname);
 	        return console.log(err);
