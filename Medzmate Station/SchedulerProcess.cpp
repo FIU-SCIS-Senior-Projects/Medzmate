@@ -3,6 +3,7 @@
 #include "DispenserConfiguration.h"
 #include "AlertsManager.h"
 #include <time.h>
+#include <unistd.h>
 
 SchedulerProcess::SchedulerProcess(MedzmateConfiguration* medzmate_config, list<DispenserConfiguration> dispenser_configs, AlertsManager* alertManager)
 {
