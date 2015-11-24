@@ -70,7 +70,7 @@ int main(int argc, char **argv) {
     disp_configs.push_front(med3);
     
     SchedulerProcess scheduler = SchedulerProcess(&medz_config, disp_configs, &alert_mngr);
-    scheduler.Run();
+    // scheduler.Run();
 
     return 0;
 }
