@@ -101,7 +101,7 @@ function initialize() {
         $('#confirmDialog').popup("open");
         console.log("called popup");
     }
-    );
+    ); 
 
     populate(thisForm, strawID);
 
