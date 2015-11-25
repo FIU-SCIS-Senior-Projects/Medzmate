@@ -75,7 +75,7 @@ int main(int argc, char **argv) {
     AlertsManager alert_mngr = AlertsManager();
 
     SchedulerProcess scheduler = SchedulerProcess(&medz_config, disp_configs, &alert_mngr);
-    // scheduler.Run();
+    scheduler.Run();
 
     return 0;
 }

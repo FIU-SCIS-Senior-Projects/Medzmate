@@ -19,6 +19,11 @@ DispenserConfiguration::DispenserConfiguration() {
     Symptoms.assign("");
     SideEffects.assign("");
     StrawId.assign("");
+    for (int i = 0; i < 24; i++) {
+        struct tm _tm;
+        _tm.tm_hour = 0;
+        DispensingTimes[i] = _tm;
+    }
 }
 
 void DispenserConfiguration::Print() {
@@ -46,6 +51,10 @@ void DispenserConfiguration::Print() {
         std::cout << "-----Sunday\n";
     std::cout << "---Symptoms: " << Symptoms << "\n";
     std::cout << "---SideEffects: " << SideEffects << "\n";
-
+    std::cout << "Dispensing Times ... \n";
+    for (int i = 0; i < 24; i++) {
+        if (DispensingTimes[i].tm_hour != 0)
+            std::cout << DispensingTimes[i].tm_hour << ":00" << "\n";
+    }
     std::cout << "********************************\n";
 }
