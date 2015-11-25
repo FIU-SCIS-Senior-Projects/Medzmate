@@ -1,18 +1,18 @@
 #include <ctime>
 #include <stdio.h>
+#include<string>
 
 class DispenserConfiguration
 {
 public:
 	DispenserConfiguration();
-	DispenserConfiguration(char MedicineName[32]);
-	char MedicineName [32];
-	char DoctorsName [32];
-	char DoctorsLastName[32];
+	std::string MedicineName;
+	std::string DoctorsName ;
+	std::string DoctorsLastName;
 	int Quantity;
 	tm ExpirationDate;
 	int MedicineMass;
-	int DossageNumber;
+	int DosageNumber;
 	bool Monday;
 	bool Tuesday;
 	bool Wednesday;
@@ -21,9 +21,9 @@ public:
 	bool Saturday;
 	bool Sunday;
 	tm DispensingTimes [24];
-	char Symptoms[512];
-	char SideEffects[512];
-	char StrawId [1];
+	std::string Symptoms;
+	std::string SideEffects;
+	std::string StrawId;
 	void Print();
 };
 

@@ -10,29 +10,36 @@
 #include <string>
 #include <time.h>
 #include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+
+#define STRAWSCOUNT 7
+
+const char *file_name_template = "Documents/Straw_%s.json";
+const char *letters [] = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"};
+
+void open_or_create_file(char* filename) {
+    int file_fd;
+    mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH;
+    // open file
+    file_fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, mode);
+    if (file_fd < 0) {
+        fprintf(stderr, "Could not open file %s\n", filename);
+    }
+    close(file_fd);
+}
+
+void InitializeStrawConfigurationFiles() {
+
+    char buffer [30];
+    for (int i = 0; i < STRAWSCOUNT; i++) {
+        sprintf(buffer, file_name_template, letters[i]);
+        open_or_create_file(buffer);
+    }
+}
 
 int main(int argc, char **argv) {
-
-    // default test file
-    std::string straw_a;
-    std::string straw_b;
-    std::string straw_c;
-    if (argc == 2) {
-        straw_a.assign(argv[1]);
-    } else if (argc == 3) {
-        straw_b.assign(argv[2]);
-
-    } else if (argc == 4) {
-        straw_b.assign(argv[3]);
-    } else {
-        // for debugging only
-        straw_a.assign("Straw_A.json");
-        straw_b.assign("Straw_B.json");
-        straw_c.assign("Straw_C.json");
-    }
-
-    // initialize serializer
-    Serializer serializer = Serializer();
 
     time_t currentTime;
     struct tm *_tm;
@@ -40,35 +47,33 @@ int main(int argc, char **argv) {
     _tm = localtime(&currentTime);
 
     std::cout << "Starting Medzmate Process...\n";
-    
-    
-    list<DispenserConfiguration> disp_configs = list<DispenserConfiguration>();
-    
-    AlertsManager alert_mngr = AlertsManager();
-    
     usleep(2000000);
+
+    //  InitializeStrawConfigurationFiles();
+
+    // initialize serializer
+    Serializer serializer = Serializer();
+
     // read general configuration
-    MedzmateConfiguration medz_config = serializer.DeserializeFromJsonMedzmateConfiguration("medzmate_config.json");
+    MedzmateConfiguration medz_config = serializer.DeserializeFromJsonMedzmateConfiguration("Documents/medzmate_config.json");
     medz_config.Print();
 
-    DispenserConfiguration med1 = serializer.DeserializeFromJsonDispenserConfiguration(straw_a);
-    med1.DispensingTimes[0] = *_tm;
-    med1.Print();
-    
-    disp_configs.push_front(med1);
+    list<DispenserConfiguration> disp_configs = list < DispenserConfiguration>();
 
-    DispenserConfiguration med2 = serializer.DeserializeFromJsonDispenserConfiguration(straw_b);
-    med2.DispensingTimes[0] = *_tm;
-    med2.Print();
-    
-    disp_configs.push_front(med2);
-    
-    DispenserConfiguration med3 = serializer.DeserializeFromJsonDispenserConfiguration(straw_c);
-    med3.DispensingTimes[0] = *_tm;
-    med3.Print();
-    
-    disp_configs.push_front(med3);
-    
+    char buffer [30];
+    std::string filename;
+    for (int i = 0; i < STRAWSCOUNT; i++) {
+        sprintf(buffer, file_name_template, letters[i]);
+        filename.assign(buffer);
+        DispenserConfiguration med = serializer.DeserializeFromJsonDispenserConfiguration(filename);
+        if (!med.MedicineName.empty()) {
+            disp_configs.push_front(med);
+            med.Print();
+        }
+    }
+
+    AlertsManager alert_mngr = AlertsManager();
+
     SchedulerProcess scheduler = SchedulerProcess(&medz_config, disp_configs, &alert_mngr);
     // scheduler.Run();
 
