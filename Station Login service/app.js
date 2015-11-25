@@ -4,6 +4,10 @@ var util = require('util');
 var path = require('path');
 var qs = require('querystring');
 
+var spawn = require('child_process').spawn;
+var pid = 0;
+var med;
+
 
 http.createServer(function (req, res) {
 
@@ -26,14 +30,78 @@ http.createServer(function (req, res) {
 	    else if (req.url == "/saveStraw")
 	    {
 	    	writeToFile(post.fileName, post.strawSch);	    	
-	    	console.log("Starting Medzmate Process ..."); 
-	    	var exec = require('child_process').exec;
-	    	var cmd =  './MedzmateProcess Documents/' + post.fileName;
+	    	console.log("Starting Medzmate Process from web server ..."); 
+	    	/*var exec = require('child_process').exec;
 	    	exec(cmd, function(error, stdout, stderr){
 					console.log(stdout); 
+					console.log(stderr); 
+	    	});*/
+    		if(med){
+    			// kill it before starts
+    			med.kill();
+    		}
+	    	med = spawn('./MedzmateProcess', [], { stdio: 'inherit', detached: false});
+	    	/*med.stdout.on('data', function(data){
+	    		console.log('' + data);
 	    	});
-	    	res.end('Posted Successfully');
-	    }   
+	    	med.stderr.on('data', function(data){
+	    		console.log('error: ' + data);
+	    	});
+	    	med.on('error', function(err){
+	    		console.log(err);
+	    	});*/
+		    res.end('Posted Successfully');
+	    }  
+	    else if (req.url == "/saveSettings")
+	    {
+	    	writeToFile("medzmate_config.json", post.strawSch);	    	
+	    	console.log("Starting Medzmate Process from web server ..."); 
+	    	/*var exec = require('child_process').exec;
+	    	exec(cmd, function(error, stdout, stderr){
+					console.log(stdout); 
+					console.log(stderr); 
+	    	});*/
+    		if(med){
+    			// kill it before starts
+    			med.kill();
+    		}
+	    	med = spawn('./MedzmateProcess', [], { stdio: 'inherit', detached: false});
+	    	/*med.stdout.on('data', function(data){
+	    		console.log('' + data);
+	    	});
+	    	med.stderr.on('data', function(data){
+	    		console.log('error: ' + data);
+	    	});
+	    	med.on('error', function(err){
+	    		console.log(err);
+	    	});*/
+		    res.end('Posted Successfully');
+	    }  
+	        else if (req.url == "/savePatient")
+	    {
+	    	writeToFile(post.fileName, post.strawSch);	    	
+	    	console.log("Starting Medzmate Process from web server ..."); 
+	    	/*var exec = require('child_process').exec;
+	    	exec(cmd, function(error, stdout, stderr){
+					console.log(stdout); 
+					console.log(stderr); 
+	    	});*/
+    		if(med){
+    			// kill it before starts
+    			med.kill();
+    		}
+	    	med = spawn('./MedzmateProcess', [], { stdio: 'inherit', detached: false});
+	    	/*med.stdout.on('data', function(data){
+	    		console.log('' + data);
+	    	});
+	    	med.stderr.on('data', function(data){
+	    		console.log('error: ' + data);
+	    	});
+	    	med.on('error', function(err){
+	    		console.log(err);
+	    	});*/
+		    res.end('Posted Successfully');
+	    }  
     
     	//res.writeHead(200, { 'Content-Type': 'text/plain' });
     	
@@ -41,7 +109,6 @@ http.createServer(function (req, res) {
     	
 
     })
-    
 
 }).listen(3080);
 

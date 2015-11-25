@@ -12,17 +12,17 @@ Serializer::Serializer() {
 
 void Serializer::ResolveDispenserConfiguration(string name, string value, DispenserConfiguration& dispenser_config) {
     if (name == "Medicine_Name") {
-        strcpy(dispenser_config.MedicineName, value.c_str());
+        dispenser_config.MedicineName = value;
     } else if (name == "Doctors_First_Name") {
-        strcpy(dispenser_config.DoctorsName, value.c_str());
+        dispenser_config.DoctorsName = value;
     } else if (name == "Doctors_Last_Name") {
-        strcpy(dispenser_config.DoctorsLastName, value.c_str());
+        dispenser_config.DoctorsLastName = value;
     } else if (name == "Quantity") {
         dispenser_config.Quantity = atoi(value.c_str());
     } else if (name == "Mass") {
         dispenser_config.MedicineMass = atoi(value.c_str());
     } else if (name == "nDoses") {
-        dispenser_config.DossageNumber = atoi(value.c_str());
+        dispenser_config.DosageNumber = atoi(value.c_str());
     } else if (name == "Monday") {
         dispenser_config.Monday = value == "on";
     } else if (name == "Tuesday") {
@@ -38,11 +38,11 @@ void Serializer::ResolveDispenserConfiguration(string name, string value, Dispen
     } else if (name == "Sunday") {
         dispenser_config.Sunday = value == "on";
     } else if (name == "Symptoms") {
-        strcpy(dispenser_config.Symptoms, value.c_str());
+        dispenser_config.Symptoms = value;
     } else if (name == "Side_Effects") {
-        strcpy(dispenser_config.SideEffects, value.c_str());
+        dispenser_config.SideEffects = value;
     } else if (name == "Straw_id") {
-        strcpy(dispenser_config.StrawId, value.c_str());
+        dispenser_config.StrawId = value;
     }
 }
 
@@ -78,20 +78,29 @@ DispenserConfiguration Serializer::DeserializeFromJsonDispenserConfiguration(str
     // create dispenser configuration
     DispenserConfiguration dispenser_config = DispenserConfiguration();
     Parser parser = Parser(file_name);
-    std::cout << "De-serialization of file " << file_name << " started ...\n";
+    //std::cout << "De-serialization of file " << file_name << " started ...\n";
     list<NameValuePair> properties = parser.Start();
     for (list<NameValuePair>::iterator it = properties.begin(); it != properties.end(); it++) {
         ResolveDispenserConfiguration(it->name, it->value, dispenser_config);
     }
+    // set up the dispensing 
+    if (dispenser_config.DosageNumber != 0) {
+        int hour_interval = 24 / dispenser_config.DosageNumber;
+        for (int i = 1; i <= dispenser_config.DosageNumber; i++) {
+            struct tm _tm;
+            // set hour since the beginning of day
+            _tm.tm_hour = hour_interval * i;
+            dispenser_config.DispensingTimes[i-1] = _tm;
+        }
+    }
     return dispenser_config;
-
 }
 
 MedzmateConfiguration Serializer::DeserializeFromJsonMedzmateConfiguration(string file_name) {
     // create medzmate configuration
     MedzmateConfiguration medzmate_config = MedzmateConfiguration();
     Parser parser = Parser(file_name);
-    std::cout << "De-serialization of file " << file_name << " started ...\n";
+    //std::cout << "De-serialization of file " << file_name << " started ...\n";
     list<NameValuePair> properties = parser.Start();
     for (list<NameValuePair>::iterator it = properties.begin(); it != properties.end(); it++) {
         ResolveMedzmateConfiguration(it->name, it->value, medzmate_config);

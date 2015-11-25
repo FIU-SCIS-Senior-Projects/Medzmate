@@ -27,7 +27,9 @@ Token Lexer::Get() {
 		return t;
 	}
 	else {
-		return Token();
+		Token t = Token();
+                t.empty = true;
+                return t;
 	}
 }
 
@@ -45,7 +47,9 @@ Token Lexer::Next()
 		return t;
 	}
 	else {
-		return Token();
+		Token t = Token();
+                t.empty = true;
+                return t;
 	}
 return Token();	
 }
@@ -65,7 +69,9 @@ Token Lexer::Peek()
 		return t;
 	}
 	else {
-		return Token();
+		Token t = Token();
+                t.empty = true;
+                return t;
 	}
 return Token();
 }
