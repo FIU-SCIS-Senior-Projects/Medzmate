@@ -83,6 +83,16 @@ DispenserConfiguration Serializer::DeserializeFromJsonDispenserConfiguration(str
     for (list<NameValuePair>::iterator it = properties.begin(); it != properties.end(); it++) {
         ResolveDispenserConfiguration(it->name, it->value, dispenser_config);
     }
+    // set up the dispensing 
+    if (dispenser_config.DosageNumber != 0) {
+        int hour_interval = 24 / dispenser_config.DosageNumber;
+        for (int i = 1; i <= dispenser_config.DosageNumber; i++) {
+            struct tm _tm;
+            // set hour since the beginning of day
+            _tm.tm_hour = hour_interval * i;
+            dispenser_config.DispensingTimes[i-1] = _tm;
+        }
+    }
     return dispenser_config;
 }
 
