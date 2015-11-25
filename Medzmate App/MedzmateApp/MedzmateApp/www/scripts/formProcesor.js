@@ -34,6 +34,7 @@ function createLog(strawId, jobj) {
 }
 
 function saveDataToFile(strawID, jsonData) {
+    window.localStorage.removeItem(strawID);
     window.localStorage.setItem(strawID, jsonData);
 }
 
@@ -41,35 +42,9 @@ function onSubmitClick() {
     var strawID = document.getElementById('Straw_id').value;
     var schedule = window.localStorage.getItem("temp");
     saveDataToFile(strawID, schedule);
-    sendToStation(strawID, schedule);
+    sendToStation("Straw_" + strawID, schedule, "saveStraw");
     createLog(strawID, schedule)
-    // navigateToLoadingDeck();
 }
-
-function sendToStation(strawId, schedule) {
-    var medzMateId = window.localStorage.getItem("currentStation");
-    var fName = "Straw_" + strawId + ".json"
-    $.ajax({
-        url: "http://" + medzMateId + ":3080/saveStraw",
-        // dataType: "jsonp"
-        data: { fileName: fName, strawSch: schedule },
-        // fileName: 'TestStraw123456',
-        type: 'POST',
-        jsonpCallback: 'callback', // this is not relevant to the POST anymore
-        success: function (data) {
-            console.log('Success: ', data);
-            if (data == "OK loged") {
-                isValid = 0;
-                console.log("isValid seccess", isValid);
-            }
-        },
-        error: function (xhr, status, error) {
-            console.log('Error: ' + error.message);
-        },
-        //async: false
-    });
-}
-
 
 function setconfrimationText(jobj) {
     $('#eldato').empty();

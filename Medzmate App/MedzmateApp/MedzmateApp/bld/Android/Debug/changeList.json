@@ -288,7 +288,8 @@
     "res\\screens\\android\\screen-mdpi-portrait.png",
     "www\\scripts\\formProcesor.js",
     "www\\css\\images\\ui-bg_flat_0_aaaaaa_40x100.png",
-    "www\\scripts\\formprocesor.js"
+    "www\\scripts\\dataTransmitter.js",
+    "www\\patientinfo.html"
   ],
   "deletedFilesIos": [],
   "addedPluginsIos": [
@@ -297,7 +298,16 @@
     "cordova-plugin-whitelist@1.0.0"
   ],
   "deletedPluginsIos": [],
-  "changedFiles": [],
+  "changedFiles": [
+    "www\\scripts\\formProcesor.js",
+    "www\\settings.html",
+    "www\\scripts\\settings.js",
+    "www\\patientinfo.html",
+    "www\\scripts\\patientInfo.js",
+    "www\\scripts\\securityHandler.js",
+    "www\\main.html",
+    "www\\scripts\\main.js"
+  ],
   "deletedFiles": [],
   "addedPlugins": [],
   "deletedPlugins": []

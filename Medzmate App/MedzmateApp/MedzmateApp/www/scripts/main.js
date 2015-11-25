@@ -5,6 +5,6 @@
         e.preventDefault();
         navigateToLogin();
     }
-    $(".ui-corner-all").hide();
-    $(".ui-corner-all").toggle();
+    //$(".ui-corner-all").hide();
+    //$(".ui-corner-all").toggle();
 });
