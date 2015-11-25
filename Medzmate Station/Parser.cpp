@@ -19,8 +19,8 @@ list<NameValuePair> Parser::Start()
 		properties = ParsePropertyArray();
 		_lexer.Close();
 	}
-	else
-		printf("Parsing Error");
+        else if(!token.empty)
+		printf("Parsing Error %c\n", token.value);
 	return properties;
 }
 
@@ -40,7 +40,7 @@ NameValuePair Parser::Property()
 		return ParseNameValuePair();
 	}
 	else
-		printf("Parsing Error");
+		printf("Parsing Error %c\n", token.value);
 	return NameValuePair();
 }
 
@@ -60,7 +60,7 @@ list<NameValuePair> Parser::Properties()
 		return list<NameValuePair>();
 	}
 	else 
-		printf("Parsing Error %c", token.value);
+		printf("Parsing Error %c\n", token.value);
 }
 
 NameValuePair Parser::ParseNameValuePair()
@@ -69,7 +69,7 @@ NameValuePair Parser::ParseNameValuePair()
 	// NameValuePair --> "name":"NAME", "value":"VALUE"}
 	Token token = _lexer.Next();
 	if (token.value != '"')
-		printf("Parsing Error");
+		printf("Parsing Error %c\n", token.value);
 	// see if it's name or value
 	token = _lexer.Peek();
 	if (token.value == 'n')

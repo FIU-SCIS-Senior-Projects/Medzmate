@@ -6,6 +6,7 @@ using namespace std;
 
 struct Token {
 	char value;
+        bool empty;
 };
 
 class Lexer
