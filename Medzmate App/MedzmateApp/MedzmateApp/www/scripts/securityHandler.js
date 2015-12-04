@@ -17,12 +17,6 @@ function sendRequestToServer(medzMateId)
     
     if (u != '' && p != '')
     {
-        //console.log("posting" + "http://" + medzMateId + ":3080");
-        //$.post("http://" + medzMateId + ":3080", { username: u, password: p }, function (res) ///service.cfc?method=login&returnformat=json
-        //{
-        //    // return res;
-        //    console.log("hiso algo fileEntry.name ",res);
-        //});
         var isValid = 1;
         $.ajax({
             url: "http://" + medzMateId + ":3080/login",
