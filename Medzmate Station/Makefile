@@ -1,4 +1,4 @@
-OBJS = MedzmateProcess.o SchedulerProcess.o Serializer.o MedzmateConfiguration.o DispenserConfiguration.o Parser.o Lexer.o AlertsManager.o
+OBJS = MedzmateProcess.o SchedulerProcess.o Serializer.o MedzmateConfiguration.o DispenserConfiguration.o Parser.o Lexer.o AlertsManager.o PatientInformation.o
 CC = g++
 DEBUG = -g
 CFLAGS = -c $(DEBUG)
@@ -21,7 +21,7 @@ ParserTests.o: ParserTests.cpp Parser.h
 MedzmateProcess : $(OBJS)
 	$(CC) $(LFLAGS) $(OBJS) -o MedzmateProcess
 
-MedzmateProcess.o : SchedulerProcess.h Serializer.h DispenserConfiguration.h MedzmateConfiguration.h MedzmateProcess.cpp
+MedzmateProcess.o : SchedulerProcess.h Serializer.h DispenserConfiguration.h PatientInformation.h MedzmateConfiguration.h MedzmateProcess.cpp
 	$(CC) $(CFLAGS) MedzmateProcess.cpp
 
 SchedulerProcess.o : SchedulerProcess.h SchedulerProcess.cpp MedzmateConfiguration.h DispenserConfiguration.h AlertsManager.h
@@ -30,7 +30,7 @@ SchedulerProcess.o : SchedulerProcess.h SchedulerProcess.cpp MedzmateConfigurati
 AlertsManager.o : AlertsManager.h AlertsManager.cpp
 	$(CC) $(CFLAGS) AlertsManager.cpp
 
-Serializer.o : Serializer.h Serializer.cpp MedzmateConfiguration.h DispenserConfiguration.h Parser.h
+Serializer.o : Serializer.h Serializer.cpp MedzmateConfiguration.h DispenserConfiguration.h PatientInformation.h Parser.h
 	$(CC) $(CFLAGS) Serializer.cpp
 
 MedzmateConfiguration.o : MedzmateConfiguration.h MedzmateConfiguration.cpp DispenserConfiguration.h
@@ -38,6 +38,9 @@ MedzmateConfiguration.o : MedzmateConfiguration.h MedzmateConfiguration.cpp Disp
 
 DispenserConfiguration.o : DispenserConfiguration.h DispenserConfiguration.cpp
 	$(CC) $(CFLAGS) DispenserConfiguration.cpp
+
+PatientInformation.o : PatientInformation.h PatientInformation.cpp
+	$(CC) $(CFLAGS) PatientInformation.cpp
 
 Parser.o : Parser.h Parser.cpp Lexer.h
 	$(CC) $(CFLAGS) Parser.cpp

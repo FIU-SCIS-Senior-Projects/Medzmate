@@ -3,6 +3,7 @@
 #include "SchedulerProcess.h"
 #include "Serializer.h"
 #include "DispenserConfiguration.h"
+#include "PatientInformation.h"
 #include "MedzmateConfiguration.h"
 #include "AlertsManager.h"
 #include <iostream>
@@ -53,6 +54,10 @@ int main(int argc, char **argv) {
 
     // initialize serializer
     Serializer serializer = Serializer();
+
+    // read patient information
+    PatientInformation patient_info = serializer.DeserilizeFromJsonPatientInformation("Documents/patient_information.json");
+    patient_info.Print();
 
     // read general configuration
     MedzmateConfiguration medz_config = serializer.DeserializeFromJsonMedzmateConfiguration("Documents/medzmate_config.json");

@@ -1,6 +1,6 @@
 #include <ctime>
 #include <stdio.h>
-#include<string>
+#include <string>
 
 class DispenserConfiguration
 {
