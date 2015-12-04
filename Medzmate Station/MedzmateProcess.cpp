@@ -17,7 +17,7 @@
 #define STRAWSCOUNT 7
 
 const char *file_name_template = "Documents/Straw_%s.json";
-const char *letters [] = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"};
+const char *letters [] = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
 
 void open_or_create_file(char* filename) {
     int file_fd;
