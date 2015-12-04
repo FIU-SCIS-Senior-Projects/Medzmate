@@ -3,6 +3,7 @@
 #include "Serializer.h"
 #include "MedzmateConfiguration.h"
 #include "DispenserConfiguration.h"
+#include "PatientInformation.h"
 #include "Parser.h"
 
 using namespace std;
@@ -74,6 +75,32 @@ void Serializer::ResolveMedzmateConfiguration(string name, string value, Medzmat
     }
 }
 
+void Serializer::ResolvePatientInformation(string name, string value, PatientInformation &patient_info) {
+    if (name == "Patients_First_Name") {
+        patient_info.FirstName = value;
+    } else if (name == "Patients_Last_Name") {
+        patient_info.LastName = value;
+    } else if (name == "Email") {
+        patient_info.Email = value;
+    } else if (name == "Phone") {
+        patient_info.Phone = value;
+    } else if (name == "CarePro_First_Name") {
+        patient_info.CareProviderFirstName = value;
+    } else if (name == "CarePro_Last_Name") {
+        patient_info.CareProviderLastName = value;
+    } else if (name == "CarePhone") {
+        patient_info.CareProviderPhone = value;
+    } else if (name == "CareEmail") {
+        patient_info.CareProviderEMail = value;
+    } else if (name == "Medicare") {
+        patient_info.MedicareId = value;
+    } else if (name == "Medicaid") {
+        patient_info.MedicaidId = value;
+    } else if (name == "Insurance") {
+        patient_info.Insurance = value;
+    }
+}
+
 DispenserConfiguration Serializer::DeserializeFromJsonDispenserConfiguration(string file_name) {
     // create dispenser configuration
     DispenserConfiguration dispenser_config = DispenserConfiguration();
@@ -90,7 +117,7 @@ DispenserConfiguration Serializer::DeserializeFromJsonDispenserConfiguration(str
             struct tm _tm;
             // set hour since the beginning of day
             _tm.tm_hour = hour_interval * i;
-            dispenser_config.DispensingTimes[i-1] = _tm;
+            dispenser_config.DispensingTimes[i - 1] = _tm;
         }
     }
     return dispenser_config;
@@ -106,4 +133,14 @@ MedzmateConfiguration Serializer::DeserializeFromJsonMedzmateConfiguration(strin
         ResolveMedzmateConfiguration(it->name, it->value, medzmate_config);
     }
     return medzmate_config;
+}
+
+PatientInformation Serializer::DeserilizeFromJsonPatientInformation(string file_name) {
+    PatientInformation patient_info = PatientInformation();
+    Parser parser = Parser(file_name);
+    list<NameValuePair> properties = parser.Start();
+    for (list<NameValuePair>::iterator it = properties.begin(); it != properties.end(); it++) {
+        ResolvePatientInformation(it->name, it->value, patient_info);
+    }
+    return patient_info;
 }
