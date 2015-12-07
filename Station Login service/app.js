@@ -79,7 +79,7 @@ http.createServer(function (req, res) {
 	    }  
 	        else if (req.url == "/savePatient")
 	    {
-	    	writeToFile(post.fileName, post.strawSch);	    	
+	    	writeToFile("patient_information.json", post.strawSch);	    	
 	    	console.log("Starting Medzmate Process from web server ..."); 
 	    	/*var exec = require('child_process').exec;
 	    	exec(cmd, function(error, stdout, stderr){
