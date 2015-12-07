@@ -34,7 +34,7 @@ void DispenserConfiguration::Print() {
     std::cout << "Doctors Last Name: " << DoctorsLastName << "\n";
     std::cout << "Quantity: " << Quantity << "\n";
     std::cout << "Medicine Mass: " << MedicineMass << "\n";
-    std::cout << "Dosage Number: " << DosageNumber << "\n";
+    std::cout << "Dossage Number: " << DosageNumber << "\n";
     if (Monday == true)
         std::cout << "-----Monday\n";
     if (Tuesday == true)
