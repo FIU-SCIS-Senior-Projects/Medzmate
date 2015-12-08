@@ -1,7 +1,8 @@
 *****COMPILATION
-make
-*****USE //// Remember path is always relative to the execution location thats why ../../Desktop
-./MedzmateProcess  ../../Desktop/MedzmateDeployment/Straw_D.json
+1.Open a batch.
+2. %>cd ...\Medzmate Station
+3. %>make
+4. C++ files should be compiled
 *****CLEAN UP
-make clean
+5. %>make clean
 
