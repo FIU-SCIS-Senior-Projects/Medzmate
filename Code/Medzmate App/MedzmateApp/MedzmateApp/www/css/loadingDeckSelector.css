@@ -1,0 +1,945 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body {
+    color: white;
+    background-color: royalblue;    
+	text-align:center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  /*   font-family: 'Montez', cursive;
+   color:#2d2d2d;*/
+
+}
+h1 {
+	font-size:40px;}
+h3 {
+	font-size:28px;}
+a {color:#FF9715;}
+a:hover{color:#454545;}
+
+/* #Buttons
+==================================================*/
+
+/*Flat Buttons
+========================================================================*/
+/* #Sun Flower Button
+==================================================*/
+.sun-flower-button {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  font-size: 44px;
+  color: #00ffff;
+  text-align: center;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  background: #f1c40f;
+  border: 0;
+  border-bottom: 2px solid #e2b607;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #e2b607;
+  box-shadow: inset 0 -2px #e2b607;
+}
+.sun-flower-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+/* #Alizarin Flat Button
+==================================================*/
+.alizarin-flat-button {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  font-size: 44px;
+  color: #00ffff;
+  text-align: center;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  background: #e74c3c;
+  border: 0;
+  border-bottom: 2px solid #db4334;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #db4334;
+  box-shadow: inset 0 -2px #db4334;
+}
+.alizarin-flat-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* #Emerald Flat Button
+==================================================*/
+.emerald-flat-button {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  font-size: 44px;
+  color: #00ffff;
+  text-align: center;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  background: #2ecc71;
+  border: 0;
+  border-bottom: 2px solid #28be68;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #28be68;
+  box-shadow: inset 0 -2px #28be68;
+}
+.emerald-flat-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* #Amethyst Flat Button
+==================================================*/
+.amethyst-flat-button {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  font-size: 44px;
+  color: #00ffff;
+  text-align: center;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  background: #9b59b6;
+  border: 0;
+  border-bottom: 2px solid #8d4ca7;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #8d4ca7;
+  box-shadow: inset 0 -2px #8d4ca7;
+}
+.amethyst-flat-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* #Clouds Flat Button
+==================================================*/
+.clouds-flat-button {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  font-size: 44px;
+  color:#00ffff;
+  text-align: center;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  background: #fab3e5;
+  border: 0;
+  border-bottom: 2px solid #dadedf;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #dadedf;
+  box-shadow: inset 0 -2px #dadedf;
+}
+.clouds-flat-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+
+/*Striped Buttons
+============================================================================*/
+.striped-sun-flower-button {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  font-size: 44px;
+  color: #00ffff;
+  text-align: center;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  background: repeating-linear-gradient( 90deg, #263849, #263849 5px, #f1c40f 5px, #f1c40f 20px );
+  border: 2px solid #f1c40f;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #f1c40f;
+  box-shadow: inset 0 -2px #e2b607;
+}
+.striped-sun-flower-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+
+/* #Striped Amethyst Flat Button
+==================================================*/
+.striped-amethyst-flat-button {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  font-size: 44px;
+  color: #00ffff;
+  text-align: center;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  background: repeating-linear-gradient( 90deg, #263849, #263849 5px, #9b59b6 5px, #9b59b6 20px );
+  border: 2px solid #8d4ca7;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #9b59b6;
+  box-shadow: inset 0 -2px #9b59b6;
+}
+.striped-amethyst-flat-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* #striped-Emerald Flat Button
+==================================================*/
+.striped-emerald-flat-button {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  font-size: 44px;
+  color: #00ffff;
+  text-align: center;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  background: repeating-linear-gradient( 90deg, #263849, #263849 5px, #2ecc71 5px, #2ecc71 20px );
+  border: 2px solid #28be68;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #28be68;
+  box-shadow: inset 0 -2px #28be68;
+}
+.striped-emerald-flat-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* #striped-Alizarin Flat Button
+==================================================*/
+.striped-alizarin-flat-button {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  font-size: 44px;
+  color: #00ffff;
+  text-align: center;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  background: repeating-linear-gradient( 90deg, #263849, #263849 5px, #e74c3c 5px, #e74c3c 20px );
+  border: 2px solid #db4334;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #db4334;
+  box-shadow: inset 0 -2px #db4334;
+}
+.striped-alizarin-flat-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* #striped-Clouds Flat Button
+==================================================*/
+.striped-clouds-flat-button {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  font-size: 44px;
+  color: #00ffff;
+  text-align: center;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  background: repeating-linear-gradient( 90deg, #263849, #263849 5px, #fab3e5 5px, #fab3e5 20px );
+  border: 2px solid #dadedf;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #dadedf;
+  box-shadow: inset 0 -2px #dadedf;
+}
+.striped-clouds-flat-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/*vertical stripes
+    ====================================================================*/
+
+/*vStriped Sun Flower Button
+============================================================================*/
+.vStriped-sun-flower-button {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  font-size: 44px;
+  color: #00ffff;
+  text-align: center;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  background: repeating-linear-gradient( 0deg, #263849, #263849 5px, #f1c40f 5px, #f1c40f 20px );
+  border: 2px solid #f1c40f;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #f1c40f;
+  box-shadow: inset 0 -2px #e2b607;
+}
+.striped-sun-flower-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* #vStriped Amethyst Flat Button
+==================================================*/
+.vStriped-amethyst-flat-button {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  font-size: 44px;
+  color: #00ffff;
+  text-align: center;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  background: repeating-linear-gradient( 0deg, #263849, #263849 5px, #9b59b6 5px, #9b59b6 20px );
+  border: 2px solid #8d4ca7;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #9b59b6;
+  box-shadow: inset 0 -2px #9b59b6;
+}
+.striped-amethyst-flat-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* #vStriped-Emerald Flat Button
+==================================================*/
+.vStriped-emerald-flat-button {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  font-size: 44px;
+  color: #00ffff;
+  text-align: center;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  background: repeating-linear-gradient( 0deg, #263849, #263849 5px, #2ecc71 5px, #2ecc71 20px );
+  border: 2px solid #28be68;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #28be68;
+  box-shadow: inset 0 -2px #28be68;
+}
+.striped-emerald-flat-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* #vStriped-Alizarin Flat Button
+==================================================*/
+.vStriped-alizarin-flat-button {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  font-size: 44px;
+  color: #00ffff;
+  text-align: center;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  background: repeating-linear-gradient( 0deg, #263849, #263849 5px, #e74c3c 5px, #e74c3c 20px );
+  border: 2px solid #db4334;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #db4334;
+  box-shadow: inset 0 -2px #db4334;
+}
+.striped-alizarin-flat-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* #vStriped-Clouds Flat Button
+==================================================*/
+.vStriped-clouds-flat-button {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  font-size: 44px;
+  color: #00ffff;
+  text-align: center;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  background: repeating-linear-gradient( 0deg, #263849, #263849 5px, #fab3e5 5px, #fab3e5 20px );
+  border: 2px solid #dadedf;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #dadedf;
+  box-shadow: inset 0 -2px #dadedf;
+}
+.striped-clouds-flat-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* White Striped Buttons
+============================================================================*/
+.wstriped-sun-flower-button {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  font-size: 44px;
+  color: #00ffff;
+  text-align: center;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  background: repeating-linear-gradient( 90deg, #ffffff, #ffffff 5px, #f1c40f 5px, #f1c40f 20px );
+  border: 2px solid #f1c40f;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #f1c40f;
+  box-shadow: inset 0 -2px #e2b607;
+}
+.wstriped-sun-flower-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+
+/* #wstriped Amethyst Flat Button
+==================================================*/
+.wstriped-amethyst-flat-button {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  font-size: 44px;
+  color: #00ffff;
+  text-align: center;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  background: repeating-linear-gradient( 90deg, #ffffff, #ffffff 5px, #9b59b6 5px, #9b59b6 20px );
+  border: 2px solid #8d4ca7;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #9b59b6;
+  box-shadow: inset 0 -2px #9b59b6;
+}
+.wstriped-amethyst-flat-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* #wstriped-Emerald Flat Button
+==================================================*/
+.wstriped-emerald-flat-button {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  font-size: 44px;
+  color: #00ffff;
+  text-align: center;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  background: repeating-linear-gradient( 90deg, #ffffff, #ffffff 5px, #2ecc71 5px, #2ecc71 20px );
+  border: 2px solid #28be68;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #28be68;
+  box-shadow: inset 0 -2px #28be68;
+}
+.wstriped-emerald-flat-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* #wstriped-Alizarin Flat Button
+==================================================*/
+.wstriped-alizarin-flat-button {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  font-size: 44px;
+  color: #00ffff;
+  text-align: center;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  background: repeating-linear-gradient( 90deg, #ffffff, #ffffff 5px, #e74c3c 5px, #e74c3c 20px );
+  border: 2px solid #db4334;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #db4334;
+  box-shadow: inset 0 -2px #db4334;
+}
+.wstriped-alizarin-flat-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* #wstriped-Clouds Flat Button
+==================================================*/
+.wstriped-clouds-flat-button {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  font-size: 44px;
+  color: #00ffff;
+  text-align: center;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  background: repeating-linear-gradient( 90deg, #ffffff, #ffffff 5px, #fab3e5 5px, #fab3e5 20px );
+  border: 2px solid #dadedf;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #dadedf;
+  box-shadow: inset 0 -2px #dadedf;
+}
+.wstriped-clouds-flat-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* Withe vertical stripes
+    ====================================================================*/
+
+/*wvStriped Sun Flower Button
+============================================================================*/
+.wvStriped-sun-flower-button {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  font-size: 44px;
+  color: #00ffff;
+  text-align: center;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  background: repeating-linear-gradient( 0deg, #ffffff, #ffffff 5px, #f1c40f 5px, #f1c40f 20px );
+  border: 2px solid #f1c40f;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #f1c40f;
+  box-shadow: inset 0 -2px #e2b607;
+}
+.wvStriped-sun-flower-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* #vStriped Amethyst Flat Button
+==================================================*/
+.wvStriped-amethyst-flat-button {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  font-size: 44px;
+  color: #00ffff;
+  text-align: center;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  background: repeating-linear-gradient( 0deg, #ffffff, #ffffff 5px, #9b59b6 5px, #9b59b6 20px );
+  border: 2px solid #8d4ca7;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #9b59b6;
+  box-shadow: inset 0 -2px #9b59b6;
+}
+.wvStriped-amethyst-flat-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* #vStriped-Emerald Flat Button
+==================================================*/
+.wvStriped-emerald-flat-button {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  font-size: 44px;
+  color: #00ffff;
+  text-align: center;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  background: repeating-linear-gradient( 0deg, #ffffff, #ffffff 5px, #2ecc71 5px, #2ecc71 20px );
+  border: 2px solid #28be68;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #28be68;
+  box-shadow: inset 0 -2px #28be68;
+}
+.wvStriped-emerald-flat-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* #wvStriped-Alizarin Flat Button
+==================================================*/
+.wvStriped-alizarin-flat-button {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  font-size: 44px;
+  color: #00ffff;
+  text-align: center;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  background: repeating-linear-gradient( 0deg, #ffffff, #ffffff 5px, #e74c3c 5px, #e74c3c 20px );
+  border: 2px solid #db4334;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #db4334;
+  box-shadow: inset 0 -2px #db4334;
+}
+.wvStriped-alizarin-flat-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* #wvStriped-Clouds Flat Button
+==================================================*/
+.wvStriped-clouds-flat-button {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  font-size: 44px;
+  color: #00ffff;
+  text-align: center;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  background: repeating-linear-gradient( 0deg, #ffffff, #ffffff 5px, #fab3e5 5px, #fab3e5 20px );
+  border: 2px solid #dadedf;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #dadedf;
+  box-shadow: inset 0 -2px #dadedf;
+}
+.wvstriped-clouds-flat-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/*
+* Skeleton V1.2
+* Copyright 2011, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 6/20/2012
+*/
+
+
+/* Table of Contents
+==================================================
+    #Base 960 Grid
+    #Tablet (Portrait)    
+    #Tablet (Landscape)
+    #Mobile (Portrait)
+    #Mobile (Landscape)
+    #Clearing */
+
+
+/* #Base 960 Grid
+================================================== */
+
+    .container                                  { position: relative; width: 960px; margin: 0 auto; padding: 0; }
+    .container .column,
+    .container .columns                         { float: left; display: inline; margin-left: 10px; margin-right: 10px; }
+    .row                                        { margin-bottom: 20px; }
+
+    /* Nested Column Classes */
+    .column.alpha, .columns.alpha               { margin-left: 0; }
+    .column.omega, .columns.omega               { margin-right: 0; }
+
+    /* Base Grid */
+    .container .one.column,
+    .container .one.columns                     { width: 40px;  }
+    .container .two.columns                     { width: 100px; }
+    .container .three.columns                   { width: 160px; }
+    .container .four.columns                    { width: 220px; }
+    .container .five.columns                    { width: 280px; }
+    .container .six.columns                     { width: 340px; }
+    .container .seven.columns                   { width: 400px; }
+    .container .eight.columns                   { width: 460px; }
+    .container .nine.columns                    { width: 520px; }
+    .container .ten.columns                     { width: 580px; }
+    .container .eleven.columns                  { width: 640px; }
+    .container .twelve.columns                  { width: 700px; }
+    .container .thirteen.columns                { width: 760px; }
+    .container .fourteen.columns                { width: 820px; }
+    .container .fifteen.columns                 { width: 880px; }
+    .container .sixteen.columns                 { width: 940px; }
+
+    .container .one-third.column                { width: 300px; }
+    .container .two-thirds.column               { width: 620px; }
+
+    /* Offsets */
+    .container .offset-by-one                   { padding-left: 60px;  }
+    .container .offset-by-two                   { padding-left: 120px; }
+    .container .offset-by-three                 { padding-left: 180px; }
+    .container .offset-by-four                  { padding-left: 240px; }
+    .container .offset-by-five                  { padding-left: 300px; }
+    .container .offset-by-six                   { padding-left: 360px; }
+    .container .offset-by-seven                 { padding-left: 420px; }
+    .container .offset-by-eight                 { padding-left: 480px; }
+    .container .offset-by-nine                  { padding-left: 540px; }
+    .container .offset-by-ten                   { padding-left: 600px; }
+    .container .offset-by-eleven                { padding-left: 660px; }
+    .container .offset-by-twelve                { padding-left: 720px; }
+    .container .offset-by-thirteen              { padding-left: 780px; }
+    .container .offset-by-fourteen              { padding-left: 840px; }
+    .container .offset-by-fifteen               { padding-left: 900px; }
+
+
+
+/* #Tablet (Portrait)
+================================================== */
+
+    /* Note: Design for a width of 768px */
+
+    @media only screen and (min-width: 768px) and (max-width: 959px) {
+        .container                                  { width: 768px; }
+        .container .column,
+        .container .columns                         { margin-left: 10px; margin-right: 10px;  }
+        .column.alpha, .columns.alpha               { margin-left: 0; margin-right: 10px; }
+        .column.omega, .columns.omega               { margin-right: 0; margin-left: 10px; }
+        .alpha.omega                                { margin-left: 0; margin-right: 0; }
+
+        .container .one.column,
+        .container .one.columns                     { width: 28px; }
+        .container .two.columns                     { width: 76px; }
+        .container .three.columns                   { width: 124px; }
+        .container .four.columns                    { width: 172px; }
+        .container .five.columns                    { width: 220px; }
+        .container .six.columns                     { width: 268px; }
+        .container .seven.columns                   { width: 316px; }
+        .container .eight.columns                   { width: 364px; }
+        .container .nine.columns                    { width: 412px; }
+        .container .ten.columns                     { width: 460px; }
+        .container .eleven.columns                  { width: 508px; }
+        .container .twelve.columns                  { width: 556px; }
+        .container .thirteen.columns                { width: 604px; }
+        .container .fourteen.columns                { width: 652px; }
+        .container .fifteen.columns                 { width: 700px; }
+        .container .sixteen.columns                 { width: 748px; }
+
+        .container .one-third.column                { width: 236px; }
+        .container .two-thirds.column               { width: 492px; }
+
+        /* Offsets */
+        .container .offset-by-one                   { padding-left: 48px; }
+        .container .offset-by-two                   { padding-left: 96px; }
+        .container .offset-by-three                 { padding-left: 144px; }
+        .container .offset-by-four                  { padding-left: 192px; }
+        .container .offset-by-five                  { padding-left: 240px; }
+        .container .offset-by-six                   { padding-left: 288px; }
+        .container .offset-by-seven                 { padding-left: 336px; }
+        .container .offset-by-eight                 { padding-left: 384px; }
+        .container .offset-by-nine                  { padding-left: 432px; }
+        .container .offset-by-ten                   { padding-left: 480px; }
+        .container .offset-by-eleven                { padding-left: 528px; }
+        .container .offset-by-twelve                { padding-left: 576px; }
+        .container .offset-by-thirteen              { padding-left: 624px; }
+        .container .offset-by-fourteen              { padding-left: 672px; }
+        .container .offset-by-fifteen               { padding-left: 720px; }
+    }
+/* #Tablet (Landscape)*/
+/*================================================== */
+ /* Note: Design for a width of 480px */
+
+    @media only screen and (min-width: 800px) {
+        .container { width:800px;}
+        .container .columns,
+        .container .column { margin: 0; }
+
+        .container .one.column,
+        .container .one.columns,
+        .container .two.columns,
+        .container .three.columns,
+        .container .four.columns,
+        .container .five.columns,
+        .container .six.columns,
+        .container .seven.columns,
+        .container .eight.columns,
+        .container .nine.columns,
+        .container .ten.columns,
+        .container .eleven.columns,
+        .container .twelve.columns,
+        .container .thirteen.columns,
+        .container .fourteen.columns,
+        .container .fifteen.columns,
+        .container .sixteen.columns,
+        .container .one-third.column,
+        .container .two-thirds.column { width: 900px; }
+
+       .container .floated {
+           width: 150px;
+           float:left;
+           margin-right:5px;
+        }
+    }
+
+/*  #Mobile (Portrait)
+================================================== */
+
+    /* Note: Design for a width of 320px */
+
+    @media only screen and (max-width: 767px) {
+        .container { width: 300px; }
+        .container .columns,
+        .container .column { margin: 0; }
+
+        .container .one.column,
+        .container .one.columns,
+        .container .two.columns,
+        .container .three.columns,
+        .container .four.columns,
+        .container .five.columns,
+        .container .six.columns,
+        .container .seven.columns,
+        .container .eight.columns,
+        .container .nine.columns,
+        .container .ten.columns,
+        .container .eleven.columns,
+        .container .twelve.columns,
+        .container .thirteen.columns,
+        .container .fourteen.columns,
+        .container .fifteen.columns,
+        .container .sixteen.columns,
+        .container .one-third.column,
+        .container .two-thirds.column  { width: 300px; }
+
+        /* Offsets */
+        .container .offset-by-one,
+        .container .offset-by-two,
+        .container .offset-by-three,
+        .container .offset-by-four,
+        .container .offset-by-five,
+        .container .offset-by-six,
+        .container .offset-by-seven,
+        .container .offset-by-eight,
+        .container .offset-by-nine,
+        .container .offset-by-ten,
+        .container .offset-by-eleven,
+        .container .offset-by-twelve,
+        .container .offset-by-thirteen,
+        .container .offset-by-fourteen,
+        .container .offset-by-fifteen { padding-left: 0; }
+
+    }
+
+
+/* #Mobile (Landscape)
+================================================== */
+
+    /* Note: Design for a width of 480px */
+
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+        .container { width:480px; }
+        .container .columns,
+        .container .column { margin: 0; }
+
+        .container .one.column,
+        .container .one.columns,
+        .container .two.columns,
+        .container .three.columns,
+        .container .four.columns,
+        .container .five.columns,
+        .container .six.columns,
+        .container .seven.columns,
+        .container .eight.columns,
+        .container .nine.columns,
+        .container .ten.columns,
+        .container .eleven.columns,
+        .container .twelve.columns,
+        .container .thirteen.columns,
+        .container .fourteen.columns,
+        .container .fifteen.columns,
+        .container .sixteen.columns,
+        .container .one-third.column,
+        .container .two-thirds.column { width: 480px; }
+
+       .container .floated {
+           width: 90px;
+           float:left;
+           margin-right:5px;
+        }
+    }
+
+
+/* #Clearing
+================================================== */
+
+    /* Self Clearing Goodness */
+    .container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+
+    /* Use clearfix class on parent to clear nested columns,
+    or wrap each row of columns in a <div class="row"> */
+    .clearfix:before,
+    .clearfix:after,
+    .row:before,
+    .row:after {
+      content: '\0020';
+      display: block;
+      overflow: hidden;
+      visibility: hidden;
+      width: 0;
+      height: 0; }
+    .row:after,
+    .clearfix:after {
+      clear: both; }
+    .row,
+    .clearfix {
+      zoom: 1; }
+
+    /* You can also use a <br class="clear" /> to clear columns */
+    .clear {
+      clear: both;
+      display: block;
+      overflow: hidden;
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }

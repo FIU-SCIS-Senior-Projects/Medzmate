@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- Basic Page Needs
+        ================================================== -->
+    <meta charset="utf-8">
+    <title>Patient Information</title>
+    <!--Prevent zooming of the app-->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <!-- Enable all requests, inline styles, and eval() -->
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+
+    <!-- MedzmateApp references -->
+    <link href="css/formStyle.css" rel="stylesheet" />
+    <script src="scripts/navigator.js"></script>
+    <script type="text/javascript" src="scripts/logCreator.js"></script>
+    <script src="scripts/patientInfo.js"></script>
+
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+     <script src="scripts/jquery-1.11.1.min.js"></script>
+    <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
+
+    <!-- Cordova reference, this is added to your app when it's built. -->
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+    <script src="cordova_plugins.js"></script>
+
+    <script type="text/javascript" src="scripts/dataTransmitter.js"></script>
+
+    <!-- Override Jquerry ui background color-->
+    <style>
+        .ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper {
+            background-color: royalblue;
+        }
+    </style>
+
+</head>
+<body id="main_body">
+    <img id="top" src="images/top.png" alt="">
+    <div id="form_container">
+        <form id="patient-Info" class="medicineDetails" method="post" action="">
+            <div class="form_description">
+                <h2>Patient Information</h2>
+                <p>Please enter the patient information </p>
+            </div>
+            <ul>
+                <li id="li_2">
+                    <label class="description" for="Patients_Name">Patient's Name </label>
+                    <span>
+                        <input id="Patients_Name_1" name="Patients_First_Name" class="element text" maxlength="255" size="8" placeholder="First" />
+                    </span>
+                    <span>
+                        <input id="Patients_Name_2" name="Patients_Last_Name" class="element text" maxlength="255" size="14" placeholder="Last" />
+                    </span>
+                </li>
+                <li id="li_3">
+                    <label class="description" for="Phone">Phone Number</label>
+                    <span>
+                        <input id="Phone" type="text" name="Phone" placeholder="...-......." />
+                    </span>
+                </li>
+                <li id="li_4">
+                    <label class="description" for="Email">Patient's Email</label>
+                    <span>
+                        <input id="Email" type="email" name="Email" placeholder="malito@medzmate.com" />
+                    </span>
+                </li>
+            </ul>     
+            <div class="form_description">
+            </div>       
+            <ul>
+                <li id="li_5">
+                    <label class="description" for="CarePro_Name">Primary care provider Name </label>
+                    <span>
+                        <input id="CarePros_Name_1" name="CarePro_First_Name" class="element text" maxlength="255" size="8" placeholder="First" />
+                    </span>
+                    <span>
+                        <input id="CarePro_Name_2" name="CarePro_Last_Name" class="element text" maxlength="255" size="14" placeholder="Last" />
+                    </span>
+                </li>
+                <li id="li_6">
+                    <label class="description" for="CarePhone">Phone Number</label>
+                    <span>
+                        <input id="CarePhone" type="text" name="CarePhone" placeholder="...-......." />
+                    </span>
+                </li>
+                <li id="li_7">
+                    <label class="description" for="CareEmail">Primary care provider Email</label>
+                    <span>
+                        <input id="CareEmail" type="email" name="CareEmail" placeholder="malito@medzmate.com" />
+                    </span>
+                </li>
+            </ul>
+            <div class="form_description">
+            </div>
+            <ul>
+                <li id="li_8">
+                    <label class="description" for="Medicare">Medicare Number</label>
+                    <span>
+                        <input id="Medicare" type="text" name="Medicare" placeholder="Medicare #" />
+                    </span>
+                </li>
+                <li id="li_9">
+                    <label class="description" for="Medicaid">Medicaid Number</label>
+                    <span>
+                        <input id="Medicaid" type="text" name="Medicaid " placeholder="Medicaid #" />
+                    </span>
+                </li>
+                <li id="li_10">
+                    <label class="description" for="Insurance">Health Insurance</label>
+                    <span>
+                        <input id="Insurance" type="text" name="Insurance" placeholder="Health Insurance #" />
+                    </span>
+                </li>
+            </ul>
+            <div class="form_description">
+            </div>
+            <ul>
+                <li class="buttons">
+                    <a href="#popupDialog" id ='cancleBtn' data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-transition="pop" data-icon="delete">Cancel</a>
+                    <input id="saveForm" class="button_text" type="submit" data-inline="true" name="submit" data-theme="b" Check - data-icon="check" value="Submit" />
+                </li>
+            </ul>
+            <div data-role="popup" id="popupDialog" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
+                <div data-role="header" data-theme="a" class="ui-corner-top">
+                    <h1>Delete Page?</h1>
+                </div>
+                <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
+                    <h3 class="ui-title">Are you sure you want leave this page?</h3>
+                    <p>Any un-saved data will be lost.</p>
+                    <p>This action cannot be undone.</p>
+                    <a href="#" data-role="button" data-inline="true" data-rel="back" data-icon="delete" data-theme="a">Stay in the form</a>
+                    <input id="cancelForm" class="button_text" type="button" data-inline="true" name="cancel" data-theme="b" data-icon="check" value="Take me out" data-rel="dialog" onclick="navigateToMain()" />
+                </div>
+            </div>
+            <div data-role="popup" id="confirmDialog" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
+                <div data-role="header" data-theme="a" class="ui-corner-top">
+                    <h1>Submit Page?</h1>
+                </div>
+                <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
+                    <h3 class="ui-title">Is this infromation correct?</h3>
+                    <p id="eldato"></p>
+                    <p><b>By clicking "Submit" you confirm that you have read the information in this page and you want to submit it to the medzmate station.</b></p>
+                    <a href="#" data-role="button" data-inline="true" data-rel="back" data-icon="delete" data-theme="a">Stay in the form</a>
+                    <input id="submitForm" class="button_text" type="button" data-inline="true" name="submit" data-theme="b" data-icon="check" value="Submit" data-rel="dialog" onclick="onSubmitClick()" />
+                </div>
+            </div>
+</form>
+    </div>
+    <script>
+        initialize();
+    </script>
+</body>
+</html>

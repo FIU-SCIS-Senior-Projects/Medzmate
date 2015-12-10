@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+     <!-- Basic Page Needs
+        ================================================== -->
+        <meta charset="utf-8">
+        <title>Medicine Information</title>
+        <!--Prevent zooming of the app-->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <!-- Enable all requests, inline styles, and eval() -->
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+
+        <!-- MedzmateApp references -->
+        <link href="css/formStyle.css" rel="stylesheet" />
+        
+
+        <!-- Jquerry ui references TODO get the files local-->
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+        <script src="scripts/jquery-1.11.1.min.js"></script> 
+        <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
+    
+        <!-- Cordova reference, this is added to your app when it's built. -->
+        <script src="cordova.js"></script>
+        <script src="scripts/platformOverrides.js"></script>
+        <script src="cordova_plugins.js"></script>
+
+        <!-- Override Jquerry ui background color-->
+        <style>
+            .ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper
+            {
+                background-color:royalblue;
+            }
+        </style>
+
+        <!--Js files-->
+        <script type="text/javascript" src="scripts/navigator.js"></script>
+        <script type="text/javascript" src="scripts/calendar.js"></script>
+        <script type="text/javascript" src="scripts/logCreator.js"></script>
+        <script type="text/javascript" src="scripts/formProcesor.js"></script>
+        <script type="text/javascript" src="scripts/dataTransmitter.js"></script>
+  
+</head>
+<body id="main_body">
+<img id="top" src="images/top.png" alt="">
+<div id="form_container">
+    <form id="form_1050292" class="medicineDetails" method="post" action="">
+        <div class="form_description">
+            <h2>Medicine Information</h2>
+            <p>Please enter the medicine information being loaded</p>
+        </div>
+        <ul>
+
+            <li id="li_1">
+                <label class="description" for="Medicine_Name">Medicine Name </label>
+                <div>
+                    <input id="Medicine_Name" name="Medicine_Name" class="element text medium" type="text" maxlength="255" required value="" />
+                </div>
+            </li>
+            <li id="li_2">
+                <label class="description" for="Doctors_Name">Doctor's Name </label>
+                <span>
+                    <input id="Doctors_Name_1" name="Doctors_First_Name" class="element text" maxlength="255" size="8"  placeholder ="First" />
+                </span>
+                <span>
+                    <input id="Doctors_Name_2" name="Doctors_Last_Name" class="element text" maxlength="255" size="14" placeholder ="Last" />
+                </span>
+            </li>
+            <li id="li_3">
+                <label class="description" for="Quantity">Quantity </label>
+                <div>
+                    <input id="Quantity" name="Quantity" type="number" data-clear-btn="false" required value="" />
+                </div>
+            </li>
+            <li id="li_9">
+                <label class="description" for="Mass">Mass </label>
+                <div>
+                    <input id="Mass" name="Mass" type="number" data-clear-btn="false" required value="" />
+                </div>
+            </li>
+            <li id="li_4">
+                <div >
+                    <label for="Expiration_date">Expiration Date:</label>
+                    <input type="date" name="Expiration_date" id="Expiration_date" value="" />
+                </div>
+
+            </li>
+            <li id="li_7">
+                <label class="description" for="Number_of_Doses">No. of Doses (per day) </label>
+                <div>
+                    <select class="element select small" id="Number_of_Doses" name="Number_of_Doses" data-native-menu="false"  >
+                        <option value="1" selected>1 per day ( 1 every 24 hrs)</option>
+                        <option value="2">2 per day ( 1 every 12 hrs)</option>
+                        <option value="3">3 per day ( 1 every  8 hrs)</option>
+                        <option value="4">4 per day ( 1 every  6 hrs)</option>
+                        <option value="6">6 per day ( 1 every  4 hrs)</option>
+                        <option value="8">8 per day ( 1 every  3 hrs)</option>
+                        <option value="12">12 per day ( 1 every  2 hrs)</option>
+                        <option value="24">24 per day ( 1 every hour)</option>
+                    </select>
+                </div>
+            </li>
+            <li id="li_10">
+                <label class="description" for="frequency">Frequency </label>
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="false">
+                        <input type="checkbox" id="Monday" name="Monday" class="frqcheckbox">
+                        <label for="Monday" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left" role="button"><span class="ui-button-text">Mo</span></label>
+                        <input type="checkbox" id="Tuesday" name="Tuesday" class="frqcheckbox">
+                        <label for="Tuesday" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button"><span class="ui-button-text">Tu</span></label>
+                        <input type="checkbox" id="Wednesday" name="Wednesday" class="frqcheckbox">
+                        <label for="Wednesday" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" role="button"><span class="ui-button-text">We</span></label>
+                        <input type="checkbox" id="Thursday"name="Thursday" class="frqcheckbox">
+                        <label for="Thursday" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left" role="button"><span class="ui-button-text">Th</span></label>
+                    </fieldset>  
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="false">
+                        <input type="checkbox" id="Friday" name="Friday" class="frqcheckbox">
+                        <label for="Friday" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button"><span class="ui-button-text">Fr</span></label>
+                        <input type="checkbox" id="Saturday" name="Saturday" class="frqcheckbox">
+                        <label for="Saturday" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" role="button"><span class="ui-button-text">St</span></label>
+                        <input type="checkbox" id="Sunday" name="Sunday" class="frqcheckbox">
+                        <label for="Sunday" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button"><span class="ui-button-text">Su</span></label>
+                        <input type="checkbox" id="Daily" name="Daily" class="frqcheckbox">
+                        <label for="Daily" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" role="button"><span class="ui-button-text">Daily</span></label>
+                    </fieldset >                 
+                </li>
+            <li id="li_8">
+                <label class="description" for="Other_Container">Link with other container </label>
+                <div data-role="collapsible">
+                    <h3>Link with other container</h3>
+                    <p>
+                        <input id="Other_Container_1" name="Other_Container_1" type="checkbox" value="1" />
+                        <label for="Other_Container_1">A</label>
+                        <input id="Other_Container_2" name="element_8_2" type="checkbox" value="1" />
+                        <label for="Other_Container_2">B</label>
+                        <input id="Other_Container_3" name="element_8_3" type="checkbox" value="1" />
+                        <label for="Other_Container_3">C</label>
+                        <input id="Other_Container_4" name="element_8_4" type="checkbox" value="1" />
+                        <label for="Other_Container8_4">D</label>
+                        <input id="Other_Container_5" name="element_8_5" type="checkbox" value="1" />
+                        <label for="Other_Container_5">E</label> 
+                     </p>
+                </div>
+                                  
+            </li>
+            <li id="li_5">
+                <label class="description" for="Symptoms">Symptoms </label>
+                <div>
+                    <textarea id="Symptoms" name="Symptoms" placeholder ="What are the main symptoms?" class="element textarea medium"></textarea>
+                </div>
+            </li>
+            <li id="li_6">
+                <label class="description" for="Side_Effects">Side Effects </label>
+                <div>
+                    <textarea id="Side_Effects" name="Side_Effects" placeholder ="What are the major side effects?" class="element textarea medium"></textarea>
+                </div>
+            </li>            
+            <li class="buttons">
+                <input type="hidden" id ="Straw_id" name="Straw_id" value="Set_straw_ID_here" />
+                <a href="#popupDialog" id='cancelBtn' data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-transition="pop" data-icon="delete">Cancel</a> 
+               <!-- <a href="#confirmDialog" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-transition="pop" data-theme="b" Check - data-icon="check">Submit</a> -->
+                 <input id="saveForm" class="button_text" type="submit" data-inline="true" name="submit" data-theme="b" Check - data-icon="check" value="Submit" />
+            </li>
+            
+        </ul>
+        <div data-role="popup" id="popupDialog" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
+            <div data-role="header" data-theme="a" class="ui-corner-top">
+                <h1>Delete Page?</h1>
+            </div>
+            <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
+                <h3 class="ui-title">Are you sure you want leave this page?</h3>
+                <p>Any un-saved data will be lost.</p>
+                <p>This action cannot be undone.</p>
+                <a href="#" data-role="button" data-inline="true" data-rel="back" data-icon="delete" data-theme="a">Stay in the form</a>
+                <input id="cancelForm" class="button_text" type="button" data-inline="true" name="cancel" data-theme="b" data-icon="check" value="Take me out" data-rel="dialog" onclick="navigateToLoadingDeck()" />
+            </div>
+        </div>
+        <div data-role="popup" id="confirmDialog" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
+            <div data-role="header" data-theme="a" class="ui-corner-top">
+                <h1>Submit Page?</h1>
+            </div>
+            <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
+                <h3 class="ui-title">Is this infromation correct?</h3>
+                <p id="eldato"></p>
+                <p><b>By clicking "Submit" you confirm that you have read the information in this page and you want to submit it to the medzmate station.</b></p>
+                <a href="#" data-role="button" data-inline="true" data-rel="back" data-icon="delete" data-theme="a">Stay in the form</a>
+                <input id="submitForm" class="button_text" type="button" data-inline="true" name="submit" data-theme="b" data-icon="check" value="Submit" data-rel="dialog" onclick="onSubmitClick()" />
+            </div>
+        </div>
+    </form>
+    
+</div>
+<img id="bottom" src="images/bottom.png" alt="">
+    <script>
+        initialize();
+    </script>
+	</body>
+</html>

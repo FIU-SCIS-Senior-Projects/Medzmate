@@ -1,0 +1,8 @@
+*****COMPILATION
+1.Open a batch.
+2. %>cd ...\Medzmate Station
+3. %>make
+4. C++ files should be compiled
+*****CLEAN UP
+5. %>make clean
+
