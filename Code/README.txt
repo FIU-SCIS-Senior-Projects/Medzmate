@@ -3,6 +3,7 @@
 Medzmate App:
 	Contains all the source code for the mobile application. 
 	It is a Visual Studio 2015 solution. Refer to the installation videos for an easy tutorial on how to use it.
+	Compile and deploy .apk to the android device
 	
 Medzmate Station
 	Contains all the source code for the Medzmate Station
